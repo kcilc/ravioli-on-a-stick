@@ -6,17 +6,17 @@ const { title, image, alt, description } = Astro.props;
 
 <article>
     <hgroup>
-        <h1>{title}</h1>
+        <h1 class="heading-1">{title}</h1>
         <img src={image} alt={alt} />
-        <p>{description}</p>
+        <p class="heading-4">{description}</p>
     </hgroup>
     
     <slot />
     
-    <h2>Ingredients</h2>
+    <h2 class="heading-3">Ingredients</h2>
     <slot name="ingredients" />
     
-    <h2>Directions</h2>
+    <h2 class="heading-3">Directions</h2>
     <slot name="directions" />
 
 </article>
