@@ -1,5 +1,4 @@
 /* Where all of the helpers live! */
-
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
