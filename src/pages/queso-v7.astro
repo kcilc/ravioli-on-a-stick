@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Recipe from "../layouts/Recipe.astro"
+import DirectionsList from "../components/DirectionsList.astro"
 
 const ingredients = [
         {
@@ -74,15 +75,8 @@ const directions = [
         title="Queso v7"
         image="/queso-v7.jpg"
         alt="A mason jar sitting a counter filled with a thick sauce the color of cheddar."
-        description="A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!">
-        
-        <ul slot="ingredients">
-            {ingredients.map((i) => <li>{i.amount.join(" ")} {i.name}</li>)}
-        </ul>
-        
-        <ol slot="directions">
-            {directions.map((i) => <li>{i}</li>)}
-        </ol>
-
-    </Recipe>
+        description="A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!"
+        ingredients={ingredients}
+        directions={directions} />
 </Layout>
+

@@ -1,22 +1,37 @@
 ---
 
-const { title, image, alt, description } = Astro.props;
+interface Recipe {
+    title: string
+    image: uri
+    alt: string
+    description: string
+    ingredients: Array<{ name: string, amount: Array<number,string> }>
+    directions: Array<string>
+}
+
+const { title, image, alt, description, ingredients, directions } = Astro.props;
 
 ---
 
-<article>
-    <hgroup>
+<article class="grid-main">
+    <hgroup class="content">
         <h1 class="heading-1">{title}</h1>
         <img src={image} alt={alt} />
         <p class="heading-4">{description}</p>
     </hgroup>
     
-    <slot />
-    
-    <h2 class="heading-3">Ingredients</h2>
-    <slot name="ingredients" />
-    
-    <h2 class="heading-3">Directions</h2>
-    <slot name="directions" />
+    <section class="content">
+        <h2 class="heading-3">Ingredients</h2>
+        <ul>
+            {ingredients.map((ing) => <li>{ing.amount.join(" ")} {ing.name}</li>)}
+        </ul>
+    </section>
+
+    <section class="content">
+        <h2 class="heading-3">Directions</h2>
+        <ol class="directions-list">
+            {directions.map((dir) => <li class="directions-item">{dir}</li>)}
+        </ol>
+    </section>
 
 </article>
