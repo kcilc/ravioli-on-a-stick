@@ -22,16 +22,73 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
     
     <section class="content">
         <h2 class="heading-3">Ingredients</h2>
-        <ul>
-            {ingredients.map((ing) => <li>{ing.amount.join(" ")} {ing.name}</li>)}
+        <ul role="list" class="ingredients-list">
+            {ingredients.map((ing) => <li class="ingredients-item"><em>{ing.amount.join(" ")}</em> {ing.name}</li>)}
         </ul>
     </section>
 
     <section class="content">
         <h2 class="heading-3">Directions</h2>
-        <ol class="directions-list">
+        <ol role="list" class="directions-list">
             {directions.map((dir) => <li class="directions-item">{dir}</li>)}
         </ol>
     </section>
 
 </article>
+
+<style>
+
+    .ingredients-list {
+        padding: 0;
+    }
+
+    .ingredients-item {
+        --_gap-size: var(--pad-large);
+        position: relative;
+        padding-inline-start: var(--_gap-size);
+    }
+
+    .ingredients-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(1em - 0.25em);
+        width: 1ch;
+        height: 0.25em;
+        border-radius: 0.25em;
+        background-color: hsl(var(--plane-low));
+    }
+
+    .directions-list {
+        --_circle-size: calc(var(--pad-large) * 2);
+        --_gap-size: calc(var(--_circle-size) / 2);
+        counter-reset: directions;
+        padding: 0;
+    }
+
+    .directions-item {
+        position: relative;
+        padding-inline-start: calc(var(--_circle-size) + var(--_gap-size));
+    }
+
+    .directions-item::before {
+        content: counter(directions);
+        counter-increment: directions;
+        position: absolute;
+        left: 0;
+        display: grid;
+        place-items: center;
+        width: var(--_circle-size);
+        height: var(--_circle-size);
+        border: 1px solid hsl(var(--plane-low));
+        border-radius: 50%;
+        font-family: 'Dosis', sans-serif;
+        font-weight: 600;
+    }
+
+    .directions-item + .directions-item {
+        margin-block-start: calc(var(--pad-large) * 2);
+    }
+
+</style>
+
