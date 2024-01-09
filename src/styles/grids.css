@@ -1,0 +1,21 @@
+.grid-main {
+    display: grid;
+    grid-template-columns:
+        [edge-start] var(--pad-mid)
+        [full-width-start] 1fr
+        [content-start] min(calc(100% - (var(--pad-mid) * 2)), 75ch) [content-end]
+        1fr [full-width-end]
+        var(--pad-mid) [edge-end];
+}
+
+.edge-to-edge {
+    grid-column: edge;
+}
+
+.full-width {
+    grid-column: full-width;
+}
+
+.content {
+    grid-column: content;
+}

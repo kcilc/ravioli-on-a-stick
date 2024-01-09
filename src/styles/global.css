@@ -1,5 +1,6 @@
 @import "../styles/reset.css";
 @import "../styles/utils.css";
+@import "../styles/grids.css";
 @import "../styles/theme.css";
 
 body {
