@@ -4,16 +4,16 @@ import Recipe from "../layouts/Recipe.astro"
 
 const ingredients = [
         {
+            name: "Carrots",
+            amount: [ 90, "grams" ],
+        },
+        {
             name: "Cashews",
             amount: [ 50 , "grams" ],
         },
         {
             name: "Pistachios",
             amount: [ 10, "grams" ],
-        },
-        {
-            name: "Carrots",
-            amount: [ 90, "grams" ],
         },
         {
             name: "Lemon Juice",
@@ -56,7 +56,16 @@ const ingredients = [
             amount: [ 1, "tsp" ],
         },
 ];
-const directions = ingredients[0].name;
+
+const directions = [
+    `Dice the ${ingredients[0].name} (${ingredients[0].amount.join(" ")}) into one-inch pieces, fill a sauce pan with the ${ingredients[0].name} and enough water to cover them. Bring to a boil and simmer until fork tender.`,
+    `Once the ${ingredients[0].name} are cooked, add the ${ingredients[1].name} (${ingredients[1].amount.join(" ")}) and ${ingredients[2].name} (${ingredients[2].amount.join(" ")}) to the sauce pan with the ${ingredients[0].name}. Turn off the burner and remove from heat.`,
+    `Add the ${ingredients.slice(3).map((i) => `${i.name} (${i.amount.join(" ")})`).join(", ")} to a highspeed blender.`,
+    `Drain, then add the ${ingredients.slice(0, 3).map((i) => i.name).join(", ")} to the blender too.`,
+    `Blend until very smooth. There should be no lumps or gittiness, and the color should be pale yellow.`,
+    `Return the blended ingredients to the sauce pan. Heat over medium heat until thickened.`,
+    `Let cool, stirring every few minutes to ensure there is no skin, then store in an airtight container in the fridge.`
+];
 
 ---
 
@@ -72,7 +81,7 @@ const directions = ingredients[0].name;
         </ul>
         
         <ol slot="directions">
-            <li>{directions}<li>
+            {directions.map((i) => <li>{i}</li>)}
         </ol>
 
     </Recipe>
