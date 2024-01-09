@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Recipe from "../layouts/Recipe.astro"
+
+const ingredients = [
+        {
+            name: "Cashews",
+            amount: [ 50 , "grams" ],
+        },
+        {
+            name: "Pistachios",
+            amount: [ 10, "grams" ],
+        },
+        {
+            name: "Carrots",
+            amount: [ 90, "grams" ],
+        },
+        {
+            name: "Lemon Juice",
+            amount: [ 1, "tbsp", 1, "tsp" ],
+        },
+        {
+            name: "White Vinegar",
+            amount: [ 1, "tbsp" ],
+        },
+        {
+            name: "Coconut Milk",
+            amount: [ 2, "tbsp" ],
+        },
+        {
+            name: "Oat Milk",
+            amount: [ 0.25, "cup" ],
+        },
+        {
+            name: "Coconut Oil",
+            amount: [ 2, "tsp" ],
+        },
+        {
+            name: "Soy Sauce",
+            amount: [ 1, "tsp" ],
+        },
+        {
+            name: "Garlic",
+            amount: [ 0.5, "clove" ],
+        },
+        {
+            name: "Tapioca Starch",
+            amount: [ 1, "tbsp" ],
+        },
+        {
+            name: "Nutritional Yeast",
+            amount: [ 1, "tbsp" ],
+        },
+        {
+            name: "Salt",
+            amount: [ 1, "tsp" ],
+        },
+];
+const directions = ingredients[0].name;
+
+---
+
+<Layout>
+    <Recipe
+        title="Queso v7"
+        image="../public/image.jpg"
+        alt="A mason jar sitting a counter filled with a thick sauce the color of cheddar."
+        description="A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!">
+        
+        <ul slot="ingredients">
+            {ingredients.map((i) => <li>{i.amount.join(" ")} {i.name}</li>)}
+        </ul>
+        
+        <ol slot="directions">
+            <li>{directions}<li>
+        </ol>
+
+    </Recipe>
+</Layout>
