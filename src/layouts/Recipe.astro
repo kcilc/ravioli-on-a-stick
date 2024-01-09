@@ -16,7 +16,7 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
 <article class="grid-main">
     <hgroup class="content">
         <h1 class="heading-1">{title}</h1>
-        <img src={image} alt={alt} />
+        <img class="blob" src={image} alt={alt} />
         <p class="heading-4">{description}</p>
     </hgroup>
     
@@ -37,6 +37,10 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
 </article>
 
 <style>
+    .blob {
+        mask: url("blob.svg");
+        mask-size: cover;
+    }
 
     .ingredients-list {
         padding: 0;
