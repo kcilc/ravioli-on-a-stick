@@ -1,0 +1,31 @@
+@import "../styles/reset.css";
+@import "../styles/utils.css";
+@import "../styles/theme.css";
+
+body {
+    margin: 0;
+    color: hsl(var(--contrast));
+    background-color: hsl(var(--plane-mid));
+    font-family: 'Noto Sans', system-ui, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Dosis', system-ui, sans-serif;
+    font-weight: 600;
+}
+
+.heading-1 {
+    font-size: var(--h1);     
+}
+
+.heading-2 {
+    font-size: var(--h2);     
+}
+
+.heading-3 {
+    font-size: var(--h3);     
+}
+
+.heading-4 {
+    font-size: var(--h4);     
+}
