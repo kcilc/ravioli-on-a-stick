@@ -4,11 +4,26 @@
 @import "../styles/theme.css";
 
 @font-face {
-  font-family: 'Dosis';
-  src: url('/fonts/Dosis-VariableFont_wght.ttf') format('ttf');
-  font-weight: normal;
+  font-family: "Dosis";
+  src: local("Dosis"), url("/fonts/Dosis-VariableFont_wght.ttf") format("TrueType");
+  font-weight: 400 700;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Noto_Sans";
+  src: local("Noto_Sans"), local("NotoSans"), url('/fonts/NotoSans-VariableFont_wdth,wght.ttf');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: "Noto_Sans";
+  src: local("NotoSans-Italic"), url('/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf');
+  font-style: italic;
+  font-display: auto;
 }
 
 body {
