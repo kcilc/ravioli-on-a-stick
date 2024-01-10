@@ -13,21 +13,21 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
 
 ---
 
-<article class="grid-main">
-    <hgroup class="content">
-        <h1 class="heading-1">{title}</h1>
+<article class="recipe-grid">
+    <hgroup class="summary">
+        <h1 class="heading-1 no-margin">{title}</h1>
         <img class="blob" src={image} alt={alt} />
         <p class="heading-4">{description}</p>
     </hgroup>
     
-    <section class="content">
+    <section class="ingredients">
         <h2 class="heading-3">Ingredients</h2>
         <ul role="list" class="ingredients-list">
             {ingredients.map((ing) => <li class="ingredients-item"><em>{ing.amount.join(" ")}</em> {ing.name}</li>)}
         </ul>
     </section>
 
-    <section class="content">
+    <section class="directions">
         <h2 class="heading-3">Directions</h2>
         <ol role="list" class="directions-list">
             {directions.map((dir) => <li class="directions-item">{dir}</li>)}
@@ -37,6 +37,71 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
 </article>
 
 <style>
+
+    .recipe-grid {
+        display: grid;
+        grid-template-columns:
+            [edge-start] 1em
+            [summary-start ingredients-start directions-start] auto 
+            [summary-end ingredients-end directions-end] 1em [edge-end];
+        grid-template-rows:
+            [summary-start] auto
+            [summary-end ingredients-start] auto
+            [ingredients-end directions-start]auto;
+        gap: 3em;
+        align-items: baseline;
+        max-width: 220ch;
+        margin: 2em auto;
+    }
+
+    .summary {
+        grid-area: summary;
+        place-self: center;
+        max-width: 32em;
+    }
+
+    .ingredients {
+        grid-area: ingredients;
+        max-width: 75ch;
+    }
+
+    .directions {
+        grid-area: directions;
+        max-width: 75ch;
+    }
+
+    @media (min-width: 800px) {
+        .recipe-grid {
+            grid-template-columns:
+                [edge-start] 1em
+                [summary-start ingredients-start] 1fr
+                [ingredients-end directions-start] 2fr
+                [directions-end summary-end] 1em [edge-end];
+           grid-template-rows: 
+                [summary-start] auto
+                [summary-end ingredients-start directions-start] auto [ingredients-end directions-end];
+        }
+
+    }
+
+    @media (min-width: 1440px) {
+        .recipe-grid {
+            display: grid;
+            grid-template-columns:
+                [edge-start] 1em
+                [summary-start] auto
+                [summary-end ingredients-start] 1fr
+                [ingredients-end directions-start] 1.5fr
+                [directions-end] 1em [edge-end];
+            grid-template-rows: revert;
+            justify-items: center;
+        }
+
+        .summary {
+            place-self: revert;
+        }
+    }
+
     .blob {
         mask: url("/blob.svg");
         mask-size: cover;
