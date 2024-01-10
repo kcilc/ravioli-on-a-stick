@@ -48,7 +48,6 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
             [summary-start] auto
             [summary-end ingredients-start] auto
             [ingredients-end directions-start]auto;
-        gap: 3em;
         align-items: baseline;
         max-width: 220ch;
         margin: 2em auto;
@@ -80,6 +79,7 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
            grid-template-rows: 
                 [summary-start] auto
                 [summary-end ingredients-start directions-start] auto [ingredients-end directions-end];
+            gap: 3em;
         }
 
     }
