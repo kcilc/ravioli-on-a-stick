@@ -3,6 +3,14 @@
 @import "../styles/grids.css";
 @import "../styles/theme.css";
 
+@font-face {
+  font-family: 'Dosis';
+  src: url('/fonts/Dosis-VariableFont_wght.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
     margin: 0;
     color: hsl(var(--contrast));
