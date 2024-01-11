@@ -6,16 +6,16 @@ import DirectionsLi from "../components/DirectionsLi.astro"
 const ingredients = [
         {
             name: "carrots",
-            amount: [ 90, "grams" ],
+            amount: [ 90, "grams", "or", 2, "small" ],
         },
         {
             name: "cashews",
-            amount: [ 50 , "grams" ],
+            amount: [ 50 , "grams", "or", 0.5, "cups" ],
         },
         {
             name: "pistachios",
-            amount: [ 10, "grams" ],
-            note: "(optional; match weight with cashews if omitting)"
+            amount: [ 10, "grams", "or", 2, "tbsp" ],
+            note: "(optional; replace with cashews if omitting)"
         },
         {
             name: "lemon juice",
@@ -62,7 +62,7 @@ const ingredients = [
 
 ---
 
-<Layout>
+<Layout title="Queso v7" desc="A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!">
     <Recipe
         title="Queso v7"
         image="/queso-v7-1024.jpg"
@@ -92,7 +92,7 @@ const ingredients = [
                 </p>
                 <p>
                     Drain the <strong>{ingredients[0].name}, {ingredients[1].name}</strong>, and <strong>{ingredients[2].name}</strong> and add them to the blender too.
-                    We'll be using the sauce pan again later.
+                    We'll be adding the blended sauce back into the sauce pan in the next step.
                 </p>
                 <p>
                     Blend until very smooth. There should be no lumps or grittiness, and the color should be pale yellow.
