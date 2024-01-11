@@ -1,0 +1,59 @@
+---
+
+const { href, label, src, alt, desc } = Astro.props;
+
+---
+
+<a class="LinkCard-grid card" href={href}>
+    <img class="LinkCard-grid-img card-image" src={src} alt={alt} />
+    <h2 class="LinkCard-grid-label card-title heading-4 no-margin">{label}</h2>
+    <p class="LinkCard-grid-desc card-desc">{desc}</p>
+</a>
+
+<style>
+    .LinkCard-grid {
+        display: grid;
+        grid-template-columns: [full-start] var(--pad-large) [pad-start img-start] auto [img-end] var(--pad-large) [label-start desc-start] auto [label-end desc-end pad-end] var(--pad-large) [full-end];
+        grid-template-rows: [full-start] var(--pad-large) [pad-start img-start label-start] auto [label-end desc-start] auto [img-end desc-end pad-end] var(--pad-large) [full-end];
+    }
+
+    .LinkCard-grid-img {
+        grid-area: img;
+    }
+
+    .LinkCard-grid-label {
+        grid-area: label;
+    }
+
+    .LinkCard-grid-desc {
+        grid-area: desc;
+    }
+
+    .card {
+        text-decoration: none;
+        color: hsl(var(--contrast));
+        border-radius: var(--pad-mid);
+    }
+
+    .card:hover {
+        background-image: linear-gradient(90deg, hsl(var(--plane-low) / 50%), hsl(var(--plane-low) / 25%));
+    }
+
+    .card:focus {
+        outline: 2px solid hsl(var(--contrast));
+    }
+
+    .card:active {
+        background-image: linear-gradient(90deg, hsl(var(--plane-low)), hsl(var(--plane-low) / 50%));
+    }
+
+    .card-image {
+        max-width: 128px;
+        border-radius: var(--pad-small);
+        mask: url("/blob.svg");
+        mask-size: contain;
+    }
+
+
+</style>
+
