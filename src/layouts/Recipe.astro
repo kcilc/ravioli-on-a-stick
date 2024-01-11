@@ -22,7 +22,7 @@ const { title, image, alt, description, ingredients } = Astro.props;
     <section class="ingredients">
         <h2 class="heading-3">Ingredients</h2>
         <ul role="list" class="ingredients-list">
-            {ingredients.map((ing) => <li class="ingredients-item"><em>{ing.amount.join(" ")}</em> {ing.name}</li>)}
+            {ingredients.map((ing) => <li class="ingredients-item"><em>{ing.amount.join(" ")}</em> {ing.name} {ing.note && <small>{ing.note}</small>}</li>)}
         </ul>
     </section>
 
@@ -104,6 +104,7 @@ const { title, image, alt, description, ingredients } = Astro.props;
     .blob {
         mask: url("/blob.svg");
         mask-size: cover;
+        margin-block: var(--pad-large);
     }
 
     .ingredients-list {
@@ -111,9 +112,10 @@ const { title, image, alt, description, ingredients } = Astro.props;
     }
 
     .ingredients-item {
-        --_gap-size: var(--pad-large);
+        --_gap-size: calc(var(--pad-large) * 1.5);
         position: relative;
         padding-inline-start: var(--_gap-size);
+        line-height: 2;
     }
 
     .ingredients-item::before {
@@ -124,7 +126,7 @@ const { title, image, alt, description, ingredients } = Astro.props;
         width: 1ch;
         height: 0.25em;
         border-radius: 0.25em;
-        background-color: hsl(var(--plane-low));
+        background-color: hsl(var(--clr-main-300));
     }
 
     .directions-list {
