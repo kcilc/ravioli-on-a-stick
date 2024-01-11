@@ -1,0 +1,34 @@
+---
+---
+
+<li class="directions-item">
+    <slot />
+</li>
+
+<style>
+    .directions-item {
+        position: relative;
+        padding-inline-start: calc(var(--_circle-size) + var(--_gap-size));
+    }
+
+    .directions-item::before {
+        content: counter(directions);
+        counter-increment: directions;
+        position: absolute;
+        left: 0;
+        display: grid;
+        place-items: center;
+        width: var(--_circle-size);
+        height: var(--_circle-size);
+        border: 1px solid hsl(var(--plane-low));
+        border-radius: 50%;
+        font-family: 'Dosis', sans-serif;
+        font-weight: 600;
+    }
+
+    .directions-item + .directions-item {
+        margin-block-start: calc(var(--pad-large) * 3);
+    }
+
+</style>
+

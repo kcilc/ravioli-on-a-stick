@@ -6,10 +6,9 @@ interface Recipe {
     alt: string
     description: string
     ingredients: Array<{ name: string, amount: Array<number,string> }>
-    directions: Array<string>
 }
 
-const { title, image, alt, description, ingredients, directions } = Astro.props;
+const { title, image, alt, description, ingredients } = Astro.props;
 
 ---
 
@@ -30,7 +29,7 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
     <section class="directions">
         <h2 class="heading-3">Directions</h2>
         <ol role="list" class="directions-list">
-            {directions.map((dir) => <li class="directions-item">{dir}</li>)}
+            <slot />
         </ol>
     </section>
 
@@ -133,30 +132,6 @@ const { title, image, alt, description, ingredients, directions } = Astro.props;
         --_gap-size: calc(var(--_circle-size) / 2);
         counter-reset: directions;
         padding: 0;
-    }
-
-    .directions-item {
-        position: relative;
-        padding-inline-start: calc(var(--_circle-size) + var(--_gap-size));
-    }
-
-    .directions-item::before {
-        content: counter(directions);
-        counter-increment: directions;
-        position: absolute;
-        left: 0;
-        display: grid;
-        place-items: center;
-        width: var(--_circle-size);
-        height: var(--_circle-size);
-        border: 1px solid hsl(var(--plane-low));
-        border-radius: 50%;
-        font-family: 'Dosis', sans-serif;
-        font-weight: 600;
-    }
-
-    .directions-item + .directions-item {
-        margin-block-start: calc(var(--pad-large) * 2);
     }
 
 </style>

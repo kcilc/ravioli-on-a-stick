@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Recipe from "../layouts/Recipe.astro"
+import DirectionsLi from "../components/DirectionsLi.astro"
 
 const ingredients = [
         {
@@ -57,16 +58,6 @@ const ingredients = [
         },
 ];
 
-const directions = [
-    `Dice the ${ingredients[0].name} (${ingredients[0].amount.join(" ")}) into one-inch pieces, fill a sauce pan with the ${ingredients[0].name} and enough water to cover them. Bring to a boil and simmer until fork tender.`,
-    `Once the ${ingredients[0].name} are cooked, add the ${ingredients[1].name} (${ingredients[1].amount.join(" ")}) and ${ingredients[2].name} (${ingredients[2].amount.join(" ")}) to the sauce pan with the ${ingredients[0].name}. Turn off the burner and remove from heat.`,
-    `Add the ${ingredients.slice(3).map((i) => `${i.name} (${i.amount.join(" ")})`).join(", ")} to a highspeed blender.`,
-    `Drain, then add the ${ingredients.slice(0, 3).map((i) => i.name).join(", ")} to the blender too.`,
-    `Blend until very smooth. There should be no lumps or gittiness, and the color should be pale yellow.`,
-    `Return the blended ingredients to the sauce pan. Heat over medium heat until thickened.`,
-    `Let cool, stirring every few minutes to ensure there is no skin, then store in an airtight container in the fridge.`
-];
-
 ---
 
 <Layout>
@@ -75,7 +66,45 @@ const directions = [
         image="/queso-v7-1024.jpg"
         alt="A mason jar sitting a counter filled with a thick sauce the color of cheddar."
         description="A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!"
-        ingredients={ingredients}
-        directions={directions} />
+        ingredients={ingredients}>
+
+            <DirectionsLi>
+                <p>
+                    Dice the <strong>{ingredients[0].name} ({ingredients[0].amount.join(" ")})</strong> into one-inch pieces,
+                    fill a sauce pan with the <strong>{ingredients[0].name}</strong> and enough water to cover them.
+                    Bring to a boil and simmer until fork tender.
+                </p>
+                <p>
+                    Once the <strong>{ingredients[0].name}</strong> are cooked, add the
+                    <strong>{ingredients[1].name} ({ingredients[1].amount.join(" ")})</strong> and
+                    <strong>{ingredients[2].name} ({ingredients[2].amount.join(" ")})</strong>
+                    to the sauce pan with the <strong>{ingredients[0].name}</strong>. Turn off the burner and set aside to soak.
+                </p>
+            </DirectionsLi>
+
+            <DirectionsLi>
+                <p>
+                    Add to a highspeed blender the
+                    {ingredients.slice(3, -1).map((ing, i, self) => <strong>{ing.name} ({ing.amount.join(" ")}), </strong>)}
+                    and <strong>{ingredients.at(-1).name} ({ingredients.at(-1).amount.join(" ")})</strong>.
+                </p>
+                <p>
+                    Drain the <strong>{ingredients[0].name}, {ingredients[1].name}</strong>, and <strong>{ingredients[2].name}</strong> and add them to the blender too.
+                    We'll be using the sauce pan again later.
+                </p>
+                <p>
+                    Blend until very smooth. There should be no lumps or gittiness, and the color should be pale yellow.
+                </p>
+            </DirectionsLi>
+            
+            <DirectionsLi>
+                Pour the blended ingredients into the sauce pan. Heat over medium heat until thickened.
+            </DirectionsLi>
+            
+            <DirectionsLi>
+                Let the sauce cool, stirring every now and then to ensure no skin develops, then store in an airtight container in the fridge.
+            </DirectionsLi>
+
+    </Recipe>
 </Layout>
 
