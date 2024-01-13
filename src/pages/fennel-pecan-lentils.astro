@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Recipe from "../layouts/Recipe.astro"
+import DirectionsLi from "../components/DirectionsLi.astro"
+
+const ingredients = [
+    {
+        name: "refined coconut oil",
+        amount: [2, "tbsp"],
+    },
+    {
+        name: "onion",
+        amount: [0.5, "an"],
+    },
+    {
+        name: "star anise",
+        amount: [1, "seed"],
+    },
+    {
+        name: "fennel",
+        amount: [1, "tsp"],
+    },
+    {
+        name: "bay leaf",
+        amount: [1, "leaf"],
+    },
+    {
+        name: "dried oregano",
+        amount: [2, "tsp"],
+    },
+    {
+        name: "smoked paprika",
+        amount: [1, "tsp"],
+    },
+    {
+        name: "ground sage",
+        amount: [2, "tsp"],
+    },
+    {
+        name: "green lentils",
+        amount: [0.5, "cups"],
+    },
+    {
+        name: "pecans",
+        amount: [1, "cup"],
+    },
+    {
+        name: "vegetable broth",
+        amount: [2, "cups"],
+    },
+    {
+        name: "vital wheat gluten",
+        amount: [4, "tbsp"],
+    },
+    {
+        name: "ground flax seeds",
+        amount: [2, "tbsp"],
+    },
+];
+
+---
+
+<Layout title="Fennel Pecan Lentils" desc="A sausage-like mince that can be wrapped in a rice paper casing.">
+    <Recipe
+        title="Fennel Pecan Lentils"
+        image="/queso-v7-1024.jpg"
+        alt="A mason jar sitting a counter filled with a thick sauce the color of cheddar."
+        description="A sausage-like mince that can be wrapped in a rice paper casing."
+        ingredients={ingredients}>
+            
+            <p>Adapted from <a href="https://healthiersteps.com/recipe/lentil-meatballs-vegan-gluten-free-2/"> Healthier Step's Lentil Meatball recipe</a>.</p>
+
+            <DirectionsLi>
+
+                Put a large stock pot on the stove, and add the <strong>{ingredients[0].name} ({ingredients[0].amount.join(" ")})</strong>.
+                Preheat the stock pot on low heat, then add the onions when it is warm. You can sprinkle some salt on the frying onions to help them sweat.
+
+                <p>Note: Don't let the onions get brown! Stir them regularly.<p>
+
+            </DirectionsLi>
+
+            <DirectionsLi>
+
+                <p>After the <strong>{ingredients[1].name}</strong> are mostly transucent (about 5 minutes),
+                add to the stock pot the {ingredients.slice(2,7).map(ing => <strong>{ing.name} ({ing.amount.join(" ")}), </strong>)}
+                and <strong>{ingredients[7].name} ({ingredients[7].amount.join(" ")})</strong>. Continue cooking for another 5-10 minutes
+                to let the flavors mix together.</p>
+
+                <p>Finally, add the <strong>{ingredients[8].name} ({ingredients[8].amount.join(" ")})</strong> and the
+                <strong>{ingredients[9].name} ({ingredients[9].amount.join(" ")})</strong>.</p>
+
+            </DirectionsLi>
+    </Recipe>
+</Layout>
+
