@@ -14,7 +14,7 @@ import LinkCard from "../components/LinkCard.astro";
         </header>
         <section class="the-grid-pad links-grid">
             <LinkCard href="/queso-v7" label="Queso v7" src="/queso-v7-1024.jpg" alt="A jar containing a firm cheddar-colored sauce" desc="A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!" />
-            <LinkCard href="/queso-v7" label="Fennel-Pecan Lentils v3" src="/queso-v7-1024.jpg" alt="A jar containing a firm cheddar-colored sauce" desc="A sausage-like mince that can be wrapped in a rice paper casing and fried." />
+            <LinkCard href="/fennel-pecan-lentils" label="Fennel-Pecan Lentils v3" src="/queso-v7-1024.jpg" alt="A jar containing a firm cheddar-colored sauce" desc="A sausage-like mince that can be wrapped in a rice paper casing and fried." />
             <LinkCard href="/queso-v7" label="Pizza Sauce v1" src="/queso-v7-1024.jpg" alt="A jar containing a firm cheddar-colored sauce" desc="Simple tomato sauce with some nutritional yeast to add even more umami." />
             <LinkCard href="/queso-v7" label="Pizza Americana" src="/queso-v7-1024.jpg" alt="A jar containing a firm cheddar-colored sauce" desc="A pizza and defines the phrase comfort food" />
         </section>
@@ -25,7 +25,7 @@ import LinkCard from "../components/LinkCard.astro";
 
     .the-grid {
         display: grid;
-        grid-template-columns: [full-start] var(--pad-large) 1fr [pad-start] 1fr [content-start] min(75ch, 100%) [content-end] 1fr [pad-end] 1fr var(--pad-large) [full-end];
+        grid-template-columns: [full-start] var(--pad-large) 1fr [pad-start] 1fr [content-start] min(75ch, calc(100% - (var(--pad-large) * 2))) [content-end] 1fr [pad-end] 1fr var(--pad-large) [full-end];
     }
 
     .the-grid-content {
