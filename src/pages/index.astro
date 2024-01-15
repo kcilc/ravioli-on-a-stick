@@ -2,15 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import Recipe from "../layouts/Recipe.astro";
 import LinkCard from "../components/LinkCard.astro";
+import Hero from "../components/Hero.astro";
 
 ---
 
 <Layout title="Home" desc="An open source vegan recipe book">
     <main class="the-grid">
         <header class="the-grid-content">
-            <h1 class="heading-1">
+            <Hero class="heading-1">
                 Vegan recipes by a guy who loves good food and loathes ads
-            </h1>
+            </Hero>
         </header>
         <section class="the-grid-pad links-grid">
             <LinkCard href="/queso-v7" label="Queso v7" src="/queso-v7-1024.jpg" alt="A jar containing a firm cheddar-colored sauce" desc="A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!" />

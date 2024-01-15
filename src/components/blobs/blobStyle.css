@@ -1,0 +1,19 @@
+.mask-blob_1 {
+    mask: url("/blobs/blob_1.svg");
+    mask-size: contain;
+}
+
+.mask-blob_2 {
+    mask: url("/blobs/blob_2.svg");
+    mask-size: contain;
+}
+
+.mask-blob_3 {
+    mask: url("/blobs/blob_3.svg");
+    mask-size: contain;
+}
+
+.mask-blob_4 {
+    mask: url("/blobs/blob_4.svg");
+    mask-size: contain;
+}

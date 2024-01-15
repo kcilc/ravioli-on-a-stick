@@ -1,59 +1,77 @@
 ---
-
+import { randomBlob } from "./blobs/blob_utils.js";
 const { href, label, src, alt, desc } = Astro.props;
 
 ---
 
-<a class="LinkCard-grid card" href={href}>
-    <img class="LinkCard-grid-img card-image" src={src} alt={alt} />
-    <h2 class="LinkCard-grid-label card-title heading-4 no-margin">{label}</h2>
-    <p class="LinkCard-grid-desc card-desc">{desc}</p>
+<a class="LinkCard_grid card" href={href}>
+    <img class={`LinkCard_grid-img card-image ${randomBlob()}`} src={src} alt={alt} />
+    <h2 class="LinkCard_grid-label card-title heading-3 no-margin">{label}</h2>
+    <p class="LinkCard_grid-desc card-desc">{desc}</p>
 </a>
 
 <style>
-    .LinkCard-grid {
+
+    @import url("./blobs/blobStyle.css");
+
+    .LinkCard_grid {
         display: grid;
-        grid-template-columns: [full-start] var(--pad-large) [pad-start img-start] auto [img-end] var(--pad-large) [label-start desc-start] auto [label-end desc-end pad-end] var(--pad-large) [full-end];
-        grid-template-rows: [full-start] var(--pad-large) [pad-start img-start label-start] auto [label-end desc-start] auto [img-end desc-end pad-end] var(--pad-large) [full-end];
+        grid-template-columns: [full-start offset-start] var(--pad-large) [pad-start img-start label-start desc-start] auto [img-end label-end desc-end pad-end] var(--pad-large) [full-end offset-end];
+        grid-template-rows: [full-start offset-start] var(--pad-large) [pad-start img-start] auto [img-end label-start] auto [label-end desc-start] auto [desc-end pad-end] var(--pad-large) [full-end offset-end];
     }
 
-    .LinkCard-grid-img {
+    .LinkCard_grid-img {
         grid-area: img;
     }
-
-    .LinkCard-grid-label {
+    
+    .LinkCard_grid-label {
         grid-area: label;
     }
 
-    .LinkCard-grid-desc {
+    .LinkCard_grid-desc {
         grid-area: desc;
+    }
+
+    @media (min-width: 320px) {
+        .LinkCard_grid {
+            grid-template-columns: [full-start] var(--pad-large) [pad-start img-start] auto [offset-start] auto [img-end] var(--pad-large) [label-start desc-start] 1fr [label-end desc-end pad-end] var(--pad-large) [offset-end full-end];
+            grid-template-rows: [full-start offset-start] var(--pad-large) [pad-start img-start label-start] auto [label-end desc-start] auto [img-end desc-end pad-end] var(--pad-large) [full-end offset-end];
+        }
     }
 
     .card {
         text-decoration: none;
         color: hsl(var(--contrast));
+        outline: none;
+    }
+
+    .card::before {
+        content: "";
+        grid-area: offset;
         border-radius: var(--pad-mid);
     }
 
-    .card:hover {
+    .card:hover::before {
         background-image: linear-gradient(90deg, hsl(var(--plane-low) / 50%), hsl(var(--plane-low) / 25%));
     }
 
-    .card:focus {
+    .card:focus::before {
         outline: 2px solid hsl(var(--contrast));
     }
 
-    .card:active {
+    .card:active::before {
         background-image: linear-gradient(90deg, hsl(var(--plane-low)), hsl(var(--plane-low) / 50%));
     }
 
     .card-image {
         max-width: 128px;
         border-radius: var(--pad-small);
-        mask: url("/blob.svg");
-        mask-size: contain;
     }
 
+
+    .card-desc {
+        margin-block-start: 0;
+    }
 
 </style>
 

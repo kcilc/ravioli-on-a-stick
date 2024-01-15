@@ -1,17 +1,17 @@
 :root {
 
     /* Color scheme */
-    --clr-main-50: 178deg 19% 100%;
-    --clr-main-100: 178deg 19% 91%;
-    --clr-main-200: 183deg 27% 80%;
-    --clr-main-300: 188deg 27% 68%;
-    --clr-main-400: 190deg 27% 50%;
-    --clr-main-500: 192deg 27% 42%;
-    --clr-main-600: 192deg 27% 31%;
-    --clr-main-700: 192deg 27% 25%;
-    --clr-main-800: 192deg 27% 19%;
-    --clr-main-900: 192deg 27% 13%;
-    --clr-main-950: 192deg 19% 6%;
+    --clr-main-50: 175deg 0% 100%;
+    --clr-main-100: 175deg 5% 91%;
+    --clr-main-200: 175deg 5% 80%;
+    --clr-main-300: 175deg 5% 68%;
+    --clr-main-400: 175deg 5% 50%;
+    --clr-main-500: 175deg 5% 42%;
+    --clr-main-600: 175deg 5% 31%;
+    --clr-main-700: 175deg 5% 25%;
+    --clr-main-800: 175deg 50% 19%;
+    --clr-main-900: 175deg 90% 13%;
+    --clr-main-950: 175deg 100% 6%;
 
     --plane-high: var(--clr-main-50);
     --plane-mid: var(--clr-main-100);
@@ -29,8 +29,8 @@
     --alt: "Dosis";
     --stack: system-ui, sans-serif;
 
-    --h1: 4em;
-    --h2: 3em;
-    --h3: 2em;
-    --h4: 1.5em;
+    --h1: clamp(3em, 5vw, 4em);
+    --h2: clamp(2em, 4.5vw, 3em);
+    --h3: clamp(1.75em, 4vw, 2em);
+    --h4: clamp(1.25em, 3.5vw, 1.5em);
 }

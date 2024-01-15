@@ -13,16 +13,11 @@ import Logo from "./Logo.astro"
         position: sticky;
         top: 0;
         padding: var(--pad-mid);
-        background-color: hsl(var(--plane-low));
         background-image:
             radial-gradient(
-                circle at bottom,
-                hsl(var(--clr-main-300)),
-                hsl(var(--clr-main-300) / 0%)),
-            linear-gradient(
-                90deg,
-                hsl(var(--plane-low)),
-                hsl(var(--plane-mid)));
+                circle at 50% 500%,
+                hsl(var(--clr-main-200) / 0%),
+                hsl(var(--clr-main-200) / 33.33%));
         z-index: 1000;
     }
 </style>

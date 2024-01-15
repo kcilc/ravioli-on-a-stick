@@ -1,5 +1,7 @@
 ---
 
+import { randomBlob } from "../components/blobs/blob_utils.js";
+
 interface Recipe {
     title: string
     image: uri
@@ -15,7 +17,7 @@ const { title, image, alt, description, ingredients } = Astro.props;
 <article class="recipe-grid">
     <hgroup class="summary">
         <h1 class="heading-1 no-margin">{title}</h1>
-        <img class="blob" src={image} alt={alt} />
+        <img class={randomBlob()} src={image} alt={alt} />
         <p class="heading-4">{description}</p>
     </hgroup>
     
@@ -36,6 +38,8 @@ const { title, image, alt, description, ingredients } = Astro.props;
 </article>
 
 <style>
+
+    @import url("../components/blobs/blobStyle.css");
 
     .recipe-grid {
         display: grid;
