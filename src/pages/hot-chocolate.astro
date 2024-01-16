@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Recipe from "../layouts/Recipe.astro"
+import DirectionsLi from "../components/DirectionsLi.astro"
+
+const ingredients = [
+        {
+            name: "chocolate chips",
+            amount: [ 3, "tbsp" ],
+        },
+        {
+            name: "sugar",
+            amount: [ 1.5, "tbsp" ],
+        },
+        {
+            name: "non-dairy milk",
+            amount: [ 2, "cups" ],
+        },
+        {
+            name: "non-dairy whipped cream",
+            amount: [ "some" ],
+            note: "optional",
+        },
+];
+
+const { title, desc } = {
+    title: "Hot Chocolate",
+    desc: "A hot, chocolate-flavored, milk beverage. Even non-vegans seem to like it!"
+}
+
+---
+
+<Layout title={title} desc={desc}>
+    <Recipe
+        title={title}
+        image="/queso-v7-1024.jpg"
+        alt="A mason jar sitting a counter filled with a thick sauce the color of cheddar."
+        description={desc}
+        ingredients={ingredients}>
+
+            <DirectionsLi>
+                <p>
+                    Fill a sauce pan with the
+                    <strong>{ingredients[0].name} ({ingredients[0].amount.join(" ")})</strong> and
+                    <strong>{ingredients[1].name} ({ingredients[1].amount.join(" ")})</strong>.
+                    Have the <strong>{ingredients[2].name} ({ingredients[2].amount.join(" ")})</strong>
+                    ready within reach.
+                </p>
+                <p>
+                    Place the sauce pan on the stove and heat it over medium heat stirring constantly until the
+                    <strong>{ingredients[0].name}</strong> and
+                    <strong>{ingredients[1].name}</strong> have melted together completely.
+                </p>
+            </DirectionsLi>
+
+            <DirectionsLi>
+                <p>
+                    Begin by pouring roughly a tablespoon of the
+                    <strong>{ingredients[2].name}</strong> into the sauce pan with the
+                    <strong>{ingredients[0].name}</strong> and
+                    <strong>{ingredients[1].name}</strong>. Stir briskly until there are no sugar crystals left.
+                </p>
+                <p>
+                    Continue adding the <strong>{ingredients[2].name}</strong>
+                    <em>very slowly</em> while briskly stirring the mixture until all of the
+                    <strong>{ingredients[2].name}</strong> is incorporated.
+                </p>
+            </DirectionsLi>
+
+            <DirectionsLi>
+                Turn up the heat a little bit, stirring occasionally, and let the mixture get hot enough
+                to start to steam and you see small tracers in it while you stir.
+                At that point, turn off the heat and remove the pan from the burner.
+            </DirectionsLi>
+            
+            <DirectionsLi>
+                Pour the hot chocolate into two mugs. Add dollop of <strong>{ingredients[3].name}</strong>
+                on top of the hot chocolate if you would like.
+            </DirectionsLi>
+    </Recipe>
+</Layout>
+
