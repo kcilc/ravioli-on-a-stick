@@ -28,7 +28,7 @@
 
 body {
     margin: 0;
-    color: hsl(var(--contrast));
+    color: hsl(var(--contrast-high));
     background-color: hsl(var(--plane-mid));
     font-family: var(--main), var(--stack);
 }
@@ -77,12 +77,12 @@ button {
 }
 
 button:hover {
-    background-color: hsl(var(--contrast));
+    background-color: hsl(var(--contrast-high));
     color: hsl(var(--plane-mid));
 }
 
 button:focus {
-    outline: 2px solid hsl(var(--contrast));
+    outline: 2px solid hsl(var(--contrast-high));
     outline-offset: 3px;
 }
 
