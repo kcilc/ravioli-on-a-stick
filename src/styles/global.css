@@ -71,7 +71,23 @@ button {
     background-color: transparent;
     color: currentColor;
     border: none;
+    border-radius: var(--pad-mid);
     padding: var(--pad-small) var(--pad-mid);
+    transition: transform 200ms ease;
+}
+
+button:hover {
+    background-color: hsl(var(--contrast));
+    color: hsl(var(--plane-mid));
+}
+
+button:focus {
+    outline: 2px solid hsl(var(--contrast));
+    outline-offset: 3px;
+}
+
+button:active {
+    transform: scale(0.9);
 }
 
 .icon {

@@ -7,7 +7,7 @@ import Logo from "./Logo.astro"
         <Logo />
         <span class="sr-only">Home</span>
     </a>
-    <button id="modeSwitcher" data-state="system">
+    <button id="modeSwitcher" class="header-btn" data-state="system">
         <svg
             width="24"
             height="24"
@@ -34,6 +34,11 @@ import Logo from "./Logo.astro"
                 hsl(var(--clr-main-200) / 0%),
                 hsl(var(--clr-main-200) / 33.33%));
         z-index: 1000;
+    }
+
+    .header-btn {
+        align-self: center;
+        display: flex;
     }
 </style>
 
