@@ -20,7 +20,7 @@ const { title, image, alt, description, ingredients } = Astro.props;
         <img class={randomBlob()} src={image} alt={alt} />
         <p class="heading-4">{description}</p>
     </hgroup>
-    
+
     <section class="ingredients">
         <h2 class="heading-3">Ingredients</h2>
         <ul role="list" class="ingredients-list">
@@ -103,12 +103,6 @@ const { title, image, alt, description, ingredients } = Astro.props;
         .summary {
             place-self: revert;
         }
-    }
-
-    .blob {
-        mask: url("/blob.svg");
-        mask-size: cover;
-        margin-block: var(--pad-large);
     }
 
     .ingredients-list {
