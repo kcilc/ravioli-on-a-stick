@@ -1,17 +1,17 @@
 :root {
 
     /* Color scheme */
-    --clr-main-50: 175deg 0% 100%;
-    --clr-main-100: 175deg 5% 91%;
-    --clr-main-200: 175deg 5% 80%;
-    --clr-main-300: 175deg 5% 68%;
-    --clr-main-400: 175deg 5% 50%;
-    --clr-main-500: 175deg 5% 42%;
-    --clr-main-600: 175deg 5% 31%;
-    --clr-main-700: 175deg 5% 25%;
-    --clr-main-800: 175deg 50% 19%;
-    --clr-main-900: 175deg 90% 13%;
-    --clr-main-950: 175deg 100% 6%;
+    --clr-main-50: 225deg 15% 100%;
+    --clr-main-100: 225deg 15% 91%;
+    --clr-main-200: 225deg 15% 80%;
+    --clr-main-300: 225deg 15% 68%;
+    --clr-main-400: 225deg 15% 50%;
+    --clr-main-500: 225deg 15% 42%;
+    --clr-main-600: 225deg 15% 31%;
+    --clr-main-700: 225deg 15% 25%;
+    --clr-main-800: 225deg 15% 19%;
+    --clr-main-900: 225deg 15% 13%;
+    --clr-main-950: 225deg 15% 6%;
 
     --plane-high: var(--clr-main-50);
     --plane-mid: var(--clr-main-100);
@@ -33,4 +33,51 @@
     --h2: clamp(2em, 4.5vw, 3em);
     --h3: clamp(1.75em, 4vw, 2em);
     --h4: clamp(1.25em, 3.5vw, 1.5em);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+    
+        /* Color scheme */
+        --clr-main-950: 210deg 0% 100%;
+        --clr-main-900: 225deg 15% 91%;
+        --clr-main-800: 225deg 15% 80%;
+        --clr-main-700: 225deg 15% 68%;
+        --clr-main-600: 225deg 15% 50%;
+        --clr-main-500: 225deg 15% 42%;
+        --clr-main-400: 225deg 15% 31%;
+        --clr-main-300: 225deg 15% 25%;
+        --clr-main-200: 225deg 15% 19%;
+        --clr-main-100: 225deg 15% 9%;
+        --clr-main-50: 225deg 15% 6%;
+    }
+}
+
+[data-view-mode="light"] {
+    --clr-main-50: 225deg 15% 100%;
+    --clr-main-100: 225deg 15% 91%;
+    --clr-main-200: 225deg 15% 80%;
+    --clr-main-300: 225deg 15% 68%;
+    --clr-main-400: 225deg 15% 50%;
+    --clr-main-500: 225deg 15% 42%;
+    --clr-main-600: 225deg 15% 31%;
+    --clr-main-700: 225deg 15% 25%;
+    --clr-main-800: 225deg 15% 19%;
+    --clr-main-900: 225deg 15% 13%;
+    --clr-main-950: 225deg 15% 6%;
+}
+
+[data-view-mode="dark"] {
+    --clr-main-950: 210deg 0% 100%;
+    --clr-main-900: 225deg 15% 91%;
+    --clr-main-800: 225deg 15% 80%;
+    --clr-main-700: 225deg 15% 68%;
+    --clr-main-600: 225deg 15% 50%;
+    --clr-main-500: 225deg 15% 42%;
+    --clr-main-400: 225deg 15% 31%;
+    --clr-main-300: 225deg 15% 25%;
+    --clr-main-200: 225deg 15% 19%;
+    --clr-main-100: 225deg 15% 9%;
+    --clr-main-50: 225deg 15% 6%;
 }

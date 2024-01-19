@@ -7,11 +7,25 @@ import Logo from "./Logo.astro"
         <Logo />
         <span class="sr-only">Home</span>
     </a>
+    <button id="modeSwitcher" data-state="system">
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m 16.298828,10.097656 a 4.5873333,4.5873333 0 0 1 0.408203,1.886719 4.5873333,4.5873333 0 0 1 -4.58789,4.587891 4.5873333,4.5873333 0 0 1 -1.886719,-0.408204 4.5873333,4.5873333 0 0 0 4.179687,2.701172 A 4.5873333,4.5873333 0 0 0 19,14.277344 4.5873333,4.5873333 0 0 0 16.298828,10.097656 Z M 11,2 v 4 h 2 V 2 Z M 5.6367187,4.2226562 4.2226562,5.6367187 7.0507812,8.4648438 8.4648438,7.0507812 Z m 12.7265623,0 -2.828125,2.828125 1.414063,1.4140626 2.828125,-2.8281251 z M 2,11 v 2 h 4 v -2 z m 5.0507812,4.535156 -2.828125,2.828125 1.4140625,1.414063 2.8281251,-2.828125 z" />
+        </svg>
+    </button>
 </header>
+
 <style>
     .recessed-header {
         position: sticky;
         top: 0;
+        display: flex;
+        justify-content: space-between;
         padding: var(--pad-mid);
         background-color: hsl(var(--clr-main-100));
         background-image:
@@ -22,3 +36,4 @@ import Logo from "./Logo.astro"
         z-index: 1000;
     }
 </style>
+

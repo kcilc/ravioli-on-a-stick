@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 6.3499999 6.35"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showborder="false"
+     borderlayer="false"
+     showgrid="true">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="0.26458333"
+       spacingy="0.26458333"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="3"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="path1"
+       cx="3.175"
+       cy="3.1749997"
+       r="1.0583333" />
+    <rect
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="rect1"
+       width="0.52916664"
+       height="1.0583333"
+       x="2.9104166"
+       y="0.52916634" />
+    <rect
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="rect1-5"
+       width="0.52916664"
+       height="1.0583333"
+       x="2.9104166"
+       y="4.7624998" />
+    <rect
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="rect1-2"
+       width="0.52916664"
+       height="1.0583333"
+       x="2.9104164"
+       y="-5.8208332"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="rect1-5-9"
+       width="0.52916664"
+       height="1.0583333"
+       x="2.9104164"
+       y="-1.5874999"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="rect1-7"
+       width="0.52916664"
+       height="1.0583333"
+       x="4.2255445"
+       y="-2.6458335"
+       transform="rotate(45)" />
+    <rect
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="rect1-5-92"
+       width="0.52916664"
+       height="1.0583333"
+       x="4.2255445"
+       y="1.5875"
+       transform="rotate(45)" />
+    <rect
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="rect1-2-0"
+       width="0.52916664"
+       height="1.0583333"
+       x="-0.26458374"
+       y="-7.1359611"
+       transform="rotate(135)" />
+    <rect
+       style="fill:#000000;stroke-width:24;paint-order:stroke markers fill"
+       id="rect1-5-9-2"
+       width="0.52916664"
+       height="1.0583333"
+       x="-0.26458374"
+       y="-2.9026279"
+       transform="rotate(135)" />
+  </g>
+</svg>
