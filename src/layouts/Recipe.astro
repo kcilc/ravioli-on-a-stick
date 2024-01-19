@@ -72,7 +72,7 @@ const { title, image, alt, description, ingredients } = Astro.props;
         max-width: 75ch;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 40em) {
         .recipe-grid {
             grid-template-columns:
                 [edge-start] 1em
@@ -82,12 +82,12 @@ const { title, image, alt, description, ingredients } = Astro.props;
            grid-template-rows: 
                 [summary-start] auto
                 [summary-end ingredients-start directions-start] auto [ingredients-end directions-end];
-            gap: 3em;
+            gap: 2vw;
         }
 
     }
 
-    @media (min-width: 1440px) {
+    @media (min-width: 90em) {
         .recipe-grid {
             display: grid;
             grid-template-columns:
