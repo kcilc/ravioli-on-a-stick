@@ -1,5 +1,5 @@
 ---
-
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { randomBlob } from "../components/blobs/blob_utils.js";
 
 interface Recipe {
@@ -20,6 +20,8 @@ const { title, image, alt, description, ingredients } = Astro.props;
         <img class={randomBlob()} src={image} alt={alt} />
         <p class="heading-4">{description}</p>
     </hgroup>
+
+    <Breadcrumbs />
 
     <section class="ingredients">
         <h2 class="heading-3">Ingredients</h2>
@@ -44,16 +46,16 @@ const { title, image, alt, description, ingredients } = Astro.props;
     .recipe-grid {
         display: grid;
         grid-template-columns:
-            [edge-start] 1em
-            [summary-start ingredients-start directions-start] auto 
-            [summary-end ingredients-end directions-end] 1em [edge-end];
+            [summary-start bread-start ingredients-start directions-start] auto 
+            [summary-end ingredients-end directions-end bread-end];
         grid-template-rows:
-            [summary-start] auto
+            [bread-start] auto
+            [bread-end summary-start] auto
             [summary-end ingredients-start] auto
             [ingredients-end directions-start]auto;
         align-items: baseline;
         max-width: 220ch;
-        margin: 2em auto;
+        padding: var(--pad-large);
     }
 
     .summary {
@@ -75,12 +77,12 @@ const { title, image, alt, description, ingredients } = Astro.props;
     @media (min-width: 40em) {
         .recipe-grid {
             grid-template-columns:
-                [edge-start] 1em
-                [summary-start ingredients-start] 1fr
+                [bread-start summary-start ingredients-start] 1fr
                 [ingredients-end directions-start] 2fr
-                [directions-end summary-end] 1em [edge-end];
+                [directions-end summary-end bread-end];
            grid-template-rows: 
-                [summary-start] auto
+                [bread-start] auto
+                [bread-end summary-start] auto
                 [summary-end ingredients-start directions-start] auto [ingredients-end directions-end];
             gap: 2vw;
         }
@@ -91,12 +93,14 @@ const { title, image, alt, description, ingredients } = Astro.props;
         .recipe-grid {
             display: grid;
             grid-template-columns:
-                [edge-start] 1em
-                [summary-start] auto
+                [bread-start summary-start] auto
                 [summary-end ingredients-start] 1fr
                 [ingredients-end directions-start] 1.5fr
-                [directions-end] 1em [edge-end];
-            grid-template-rows: revert;
+                [directions-end bread-end];
+           grid-template-rows: 
+                [bread-start] auto
+                [bread-end summary-start ingredients-start directions-start] auto
+                [summary-end ingredients-end directions-end];
             justify-items: center;
         }
 
