@@ -17,9 +17,9 @@ const links = crumbs.reduce((acc, cur) => {
 <nav class="breadcrumbs">
     <ul class="bread-list" role="list">
         <li>
-            <a href={origin}>Home</a>
+            <a href={origin} class="crumb">Home</a>
         </li>
-        { labels.map((label, i) => <li class="bread-item"><a href={links[i]}>{label}</a></li>) }
+        { labels.map((label, i) => <li class="bread-item"><a class="crumb" href={links[i]}>{label}</a></li>) }
     </ul>
 </nav>
 
@@ -28,14 +28,29 @@ const links = crumbs.reduce((acc, cur) => {
         grid-area: bread;
         justify-self: start;
         color: hsl(var(--contrast-mid));
+        overflow-x: auto;
+        max-width: 100%;
     }
+    
     .bread-list {
         display: flex;
         padding: 0;
-        margin: 0;
+        min-width: max-content;
     }
+    
     .bread-item::before {
         content: "/";
         margin-inline: var(--pad-mid);
     }
+
+    .crumb {
+       color: hsl(var(--contrast-mid)); 
+    }
+
+    .crumb:hover {
+        color: hsl(var(--contrast-high));    
+        background-color: hsl(var(--contrast-high) / 5%);
+    }
+
 </style>
+

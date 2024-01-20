@@ -51,8 +51,12 @@ const { href, label, src, alt, desc } = Astro.props;
         border-radius: var(--pad-mid);
     }
 
+    .card:hover {
+        color: hsl(var(--plane-low));
+    }
+
     .card:hover::before {
-        background-image: linear-gradient(90deg, hsl(var(--plane-low) / 50%), hsl(var(--plane-low) / 25%));
+        background-color: hsl(var(--contrast-high));
     }
 
     .card:focus::before {
@@ -60,7 +64,6 @@ const { href, label, src, alt, desc } = Astro.props;
     }
 
     .card:active::before {
-        background-image: linear-gradient(90deg, hsl(var(--plane-low)), hsl(var(--plane-low) / 50%));
     }
 
     .card-image {

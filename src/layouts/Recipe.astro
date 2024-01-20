@@ -84,7 +84,7 @@ const { title, image, alt, description, ingredients } = Astro.props;
                 [bread-start] auto
                 [bread-end summary-start] auto
                 [summary-end ingredients-start directions-start] auto [ingredients-end directions-end];
-            gap: 2vw;
+            gap: var(--pad-large) calc(var(--pad-large) * 3);
         }
 
     }
