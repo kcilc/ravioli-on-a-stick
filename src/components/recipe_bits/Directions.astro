@@ -1,22 +1,46 @@
 ---
-const {directions} = Astro.props;
+import Preamble from "../Preamble.astro";
+const {directions, ingredients} = Astro.props;
 ---
 
-<ol role="list" class="directions-list">
-    {directions.map((direction) => 
-    <li class="directions-item">
-        {direction.map(({type, content}) =>
-                type === "ingredient"
-                ? <strong>{content.amount
-                ? <>{content.name} ({content.amount.join(" ")})</>
-                : content}</strong>
-                : <>{content}</> )}
-    </li>)}
-</ol>
+<section class="directions">
+    <h2 class="heading-3">Directions</h2>
+
+    <Preamble>
+        <slot />
+    </Preamble>
+
+    <ol role="list" class="directions-list">
+        { directions.map((step) => 
+
+            <li class="directions-item">
+                { step.map((content) => <>
+                        
+                    { typeof content === "string" &&
+                        <>{content}</>
+                    }
+                        
+                    { Array.isArray(content) &&
+                        <strong>
+                            {ingredients[content[0]].name}
+                            { content[1] > 0 && <>
+                                ({ingredients[content[0]].amount.join(" ")})
+                            </>}
+                        </strong>
+                    }
+                </>)}
+            </li>)}
+    </ol>
+</section>
 
 <style>
 
     @import url("../blobs/blobStyle.css");
+
+    .directions {
+        grid-area: directions;
+        max-width: 75ch;
+    }
 
     .directions-list {
         --_circle-size: calc(var(--pad-large) * 2);
