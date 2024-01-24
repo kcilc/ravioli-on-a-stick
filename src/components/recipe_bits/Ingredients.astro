@@ -2,18 +2,22 @@
 const {ingredients} = Astro.props;
 ---
 
-<ul role="list" class="ingredients-list">
-{ingredients.map(({name, amount, note}) =>
-    <li class="ingredients-item">
-    <em>{amount.join(" ")}</em>
+<section class="ingredients">
+    <ul role="list" class="ingredients-list">
+    
+    {ingredients.map(({name, amount, note}) =>
+        <li class="ingredients-item">
+        <em>{amount.join(" ")}</em>
 
-    {name}
+        {name}
 
-    {note && <small>{note}</small>}
+        {note && <small>{note}</small>}
 
-    </li>)}
+        </li>)}
+    
+    </ul>
 
-</ul>
+</section>
 
 <style>
     .ingredients-list {

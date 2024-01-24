@@ -25,18 +25,10 @@ const { title, image, alt, description, ingredients, directions, hasPreamble } =
             <Ingredients ingredients={ingredients} />
         </section>
 
-        <section class="directions">
-            <h2 class="heading-3">Directions</h2>
-            
-            { hasPreamble ??
-                <Preamble>
-                    <slot />
-                </Preamble>
-            }
+        <Directions directions={directions} ingredients={ingredients}>
+            <slot />
+        </Directions>
 
-            <Directions directions={directions} />
-        
-        </section>
     </article>
 </Layout>
 
@@ -67,11 +59,6 @@ const { title, image, alt, description, ingredients, directions, hasPreamble } =
 
     .ingredients {
         grid-area: ingredients;
-        max-width: 75ch;
-    }
-
-    .directions {
-        grid-area: directions;
         max-width: 75ch;
     }
 
