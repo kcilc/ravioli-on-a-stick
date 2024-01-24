@@ -3,11 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Directions from "../components/recipe_bits/Directions.astro"
 import Ingredients from "../components/recipe_bits/Ingredients.astro"
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import Preamble from "../components/Preamble.astro";
 import { randomBlob } from "../components/blobs/blob_utils.js";
 
 const { frontmatter } = Astro.props;
-const { title, image, alt, description, ingredients, directions, hasPreamble } = frontmatter;
+const { title, image, alt, description, ingredients, directions } = frontmatter;
 ---
 
 <Layout title={title} desc={description}>
@@ -20,10 +19,7 @@ const { title, image, alt, description, ingredients, directions, hasPreamble } =
 
         <Breadcrumbs />
 
-        <section class="ingredients">
-            <h2 class="heading-3">Ingredients</h2>
-            <Ingredients ingredients={ingredients} />
-        </section>
+        <Ingredients ingredients={ingredients} />
 
         <Directions directions={directions} ingredients={ingredients}>
             <slot />
