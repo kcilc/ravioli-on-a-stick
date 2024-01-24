@@ -1,34 +1,44 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Directions from "../components/recipe_bits/Directions.astro"
+import Ingredients from "../components/recipe_bits/Ingredients.astro"
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Preamble from "../components/Preamble.astro";
 import { randomBlob } from "../components/blobs/blob_utils.js";
 
-const { title, image, alt, description, ingredients } = Astro.props;
+const { frontmatter } = Astro.props;
+const { title, image, alt, description, ingredients, directions, hasPreamble } = frontmatter;
 ---
 
-<article class="recipe-grid">
-    <hgroup class="summary">
-        <h1 class="heading-1 no-margin">{title}</h1>
-        <img class={randomBlob()} src={image} alt={alt} />
-        <p class="heading-4">{description}</p>
-    </hgroup>
+<Layout title={title} desc={description}>
+    <article class="recipe-grid">
+        <hgroup class="summary">
+            <h1 class="heading-1 no-margin">{title}</h1>
+            <img class={randomBlob()} src={image} alt={alt} />
+            <p class="heading-4">{description}</p>
+        </hgroup>
 
-    <Breadcrumbs />
+        <Breadcrumbs />
 
-    <section class="ingredients">
-        <h2 class="heading-3">Ingredients</h2>
-        <ul role="list" class="ingredients-list">
-            {ingredients.map(({name, amount, note}) => <li class="ingredients-item"><em>{amount.join(" ")}</em> {name} {note && <small>{note}</small>}</li>)}
-        </ul>
-    </section>
+        <section class="ingredients">
+            <h2 class="heading-3">Ingredients</h2>
+            <Ingredients ingredients={ingredients} />
+        </section>
 
-    <section class="directions">
-        <h2 class="heading-3">Directions</h2>
-        <ol role="list" class="directions-list">
-            <slot />
-        </ol>
-    </section>
+        <section class="directions">
+            <h2 class="heading-3">Directions</h2>
+            
+            { hasPreamble ??
+                <Preamble>
+                    <slot />
+                </Preamble>
+            }
 
-</article>
+            <Directions directions={directions} />
+        
+        </section>
+    </article>
+</Layout>
 
 <style>
 

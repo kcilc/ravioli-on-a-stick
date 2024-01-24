@@ -1,0 +1,80 @@
+---
+const {directions} = Astro.props;
+---
+
+<ol role="list" class="directions-list">
+    {directions.map((direction) => 
+    <li class="directions-item">
+        {direction.map(({type, content}) =>
+                type === "ingredient"
+                ? <strong>{content.amount
+                ? <>{content.name} ({content.amount.join(" ")})</>
+                : content}</strong>
+                : <>{content}</> )}
+    </li>)}
+</ol>
+
+<style>
+
+    @import url("../blobs/blobStyle.css");
+
+    .directions-list {
+        --_circle-size: calc(var(--pad-large) * 2);
+        --_gap-size: calc(var(--_circle-size) / 2);
+        counter-reset: directions;
+        padding: 0;
+    }
+
+    .directions-item {
+        position: relative;
+    }
+
+    .directions-item::before {
+        content: counter(directions);
+        counter-increment: directions;
+        display: grid;
+        place-items: center;
+        width: var(--_circle-size);
+        height: var(--_circle-size);
+        margin-inline: auto;
+        background-color: hsl(var(--contrast-high));
+        color: hsl(var(--plane-low));
+        font-family: 'Dosis', sans-serif;
+        font-weight: 600;
+    }
+
+    @media (min-width: 18em) {
+        .directions-item {
+            padding-inline-start: calc(var(--_circle-size) + var(--_gap-size));
+        }
+
+        .directions-item::before {
+            position: absolute;
+            left: 0;
+            margin-inline: revert;
+        }
+
+    }
+
+    .directions-item:nth-child(1n)::before {
+        mask: url("../../../public/blobs/blob_1.svg");
+        mask-size: contain;
+    }
+    .directions-item:nth-child(2n)::before {
+        mask: url("../../../public/blobs/blob_2.svg");
+        mask-size: contain;
+    }
+    .directions-item:nth-child(3n)::before {
+        mask: url("../../../public/blobs/blob_3.svg");
+        mask-size: contain;
+    }
+    .directions-item:nth-child(4n)::before {
+        mask: url("../../../public/blobs/blob_4.svg");
+        mask-size: contain;
+    }
+
+    .directions-item + .directions-item {
+        margin-block-start: calc(var(--pad-large) * 3);
+    }
+
+</style>
