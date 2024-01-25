@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Recipe from "../layouts/Recipe.astro";
 import LinkCard from "../components/LinkCard.astro";
 import Hero from "../components/Hero.astro";
 
@@ -59,7 +58,7 @@ import Hero from "../components/Hero.astro";
 
     .links-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 24em), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 24em), 1fr));
         gap: var(--pad-large);
         margin-block-start: calc(var(--pad-large) * 3);
     }
