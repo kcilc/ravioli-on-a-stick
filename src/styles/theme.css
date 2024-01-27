@@ -5,10 +5,10 @@
     --clr-main-50: 225deg 15% 100%;
     --clr-main-100: 225deg 15% 91%;
     --clr-main-200: 225deg 15% 80%;
-    --clr-main-300: 225deg 15% 68%;
-    --clr-main-400: 225deg 15% 50%;
+    --clr-main-300: 225deg 15% 72%;
+    --clr-main-400: 225deg 15% 55%;
     --clr-main-500: 225deg 15% 42%;
-    --clr-main-600: 225deg 15% 31%;
+    --clr-main-600: 225deg 15% 36%;
     --clr-main-700: 225deg 15% 25%;
     --clr-main-800: 225deg 15% 19%;
     --clr-main-900: 225deg 15% 10%;
@@ -20,8 +20,8 @@
     --plane-mid: var(--clr-main-100);
     --plane-low: var(--clr-main-200);
 
-    --contrast-high: var(--clr-main-700);
-    --contrast-mid: var(--clr-main-600);
+    --contrast-high: var(--clr-main-800);
+    --contrast-mid: var(--clr-main-700);
     --contrast-low: var(--clr-main-500);
 
     /* Padding, gap, and radii */
@@ -48,7 +48,7 @@
         --plane-low: var(--clr-main-950);
         --contrast-high: var(--clr-main-100);
         --contrast-mid: var(--clr-main-300);
-        --contrast-low: var(--clr-main-500);
+        --contrast-low: var(--clr-main-400);
     }
 }
 
@@ -58,8 +58,8 @@
     --plane-high: var(--clr-main-50);
     --plane-mid: var(--clr-main-100);
     --plane-low: var(--clr-main-200);
-    --contrast-high: var(--clr-main-700);
-    --contrast-mid: var(--clr-main-600);
+    --contrast-high: var(--clr-main-800);
+    --contrast-mid: var(--clr-main-700);
     --contrast-low: var(--clr-main-500);
 }
 
@@ -71,6 +71,6 @@
     --plane-low: var(--clr-main-950);
     --contrast-high: var(--clr-main-100);
     --contrast-mid: var(--clr-main-300);
-    --contrast-low: var(--clr-main-500);
+    --contrast-low: var(--clr-main-400);
 }
 
