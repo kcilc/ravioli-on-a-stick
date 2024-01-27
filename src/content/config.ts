@@ -11,6 +11,7 @@ const recipesCollection = defineCollection({
       ingredients: z.array(z.object({
         name: z.string(),
         amount: z.array(z.string().or(z.number())),
+        note: z.string().optional(),
       })),
       directions: z.array(z.array(z.string().or(z.number().array()))),
     })
