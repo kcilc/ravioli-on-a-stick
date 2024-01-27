@@ -1,6 +1,18 @@
 ---
 import Preamble from "../Preamble.astro";
 const {directions, ingredients} = Astro.props;
+
+function nameOf(index) {
+    return ingredients[index[0]].name;
+}
+
+function amountOf(index) {
+    if (index[1] > 0) {
+        return ` (${ingredients[index[0]].amount.join(" ")})`;
+    } else {
+        return null;
+    }
+}
 ---
 
 <section class="directions">
@@ -14,20 +26,14 @@ const {directions, ingredients} = Astro.props;
         { directions.map((step) => 
 
             <li class="directions-item">
-                { step.map((content) => <>
+                { step.map((content, i, self) => <>
                         
-                    { typeof content === "string" &&
-                        <>{content}</>
-                    }
+                    { typeof content === "string" && content }
                         
                     { Array.isArray(content) &&
-                        <strong>
-                            {ingredients[content[0]].name}
-                            { content[1] > 0 && <>
-                                ({ingredients[content[0]].amount.join(" ")})
-                            </>}
-                        </strong>
+                        <strong>{nameOf(content)}{amountOf(content)}</strong>
                     }
+
                 </>)}
             </li>)}
     </ol>

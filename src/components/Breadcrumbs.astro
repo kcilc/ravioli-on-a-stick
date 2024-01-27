@@ -1,25 +1,15 @@
 ---
-
-const { origin, pathname } = Astro.url;
-const crumbs = pathname.split("/").slice(1);
-const labels = crumbs.map(crumb => crumb.split("-").map(word => word[0].toUpperCase() + word.slice(1)).join(" "))
-const links = crumbs.reduce((acc, cur) => {
-    if (!Array.isArray(acc)) {
-        [acc].push(cur);
-    } else {
-        acc.push(acc.join("") + "/" + cur);
-    }
-    return acc;
-
-}, []);
+const { link, title } = Astro.props; 
 ---
 
 <nav class="breadcrumbs">
     <ul class="bread-list" role="list">
         <li>
-            <a href={origin} class="crumb">Home</a>
+            <a href="/" class="crumb">Home</a>
         </li>
-        { labels.map((label, i) => <li class="bread-item"><a class="crumb" href={links[i]}>{label}</a></li>) }
+        <li class="bread-item">
+            <a href={link} class="crumb">{title}</a>
+        </li>
     </ul>
 </nav>
 

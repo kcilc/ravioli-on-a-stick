@@ -3,6 +3,7 @@ const {ingredients} = Astro.props;
 ---
 
 <section class="ingredients">
+    <h3 class="heading-3">Ingredients</h3>
     <ul role="list" class="ingredients-list">
     
     {ingredients.map(({name, amount, note}) =>
@@ -20,6 +21,11 @@ const {ingredients} = Astro.props;
 </section>
 
 <style>
+    .ingredients {
+        grid-area: ingredients;
+        max-width: 75ch;
+    }
+
     .ingredients-list {
         padding: 0;
     }

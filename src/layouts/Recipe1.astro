@@ -1,36 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Directions from "../components/recipe_bits/Directions.astro"
-import Ingredients from "../components/recipe_bits/Ingredients.astro"
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { randomBlob } from "../components/blobs/blob_utils.js";
+import Summary from "../components/recipe_bits/Summary.astro"
+import Ingredients from "../components/recipe_bits/Ingredients.astro"
+import Directions from "../components/recipe_bits/Directions.astro"
 
 const { frontmatter } = Astro.props;
 const { title, image, alt, description, ingredients, directions } = frontmatter;
+const { pathname } = Astro.url;
 ---
 
 <Layout title={title} desc={description}>
     <article class="recipe-grid">
-        <hgroup class="summary">
-            <h1 class="heading-1 no-margin">{title}</h1>
-            <img class={randomBlob()} src={image} alt={alt} />
-            <p class="heading-4">{description}</p>
-        </hgroup>
+        
+        <Breadcrumbs
+            link={pathname}
+            title={title} />
 
-        <Breadcrumbs />
+        <Summary
+            title={title}
+            image={image}
+            alt={alt}
+            description={description} />
 
-        <Ingredients ingredients={ingredients} />
+        <Ingredients
+            ingredients={ingredients} />
 
-        <Directions directions={directions} ingredients={ingredients}>
+        <Directions
+            directions={directions}
+            ingredients={ingredients}>
+            
             <slot />
+        
         </Directions>
 
     </article>
 </Layout>
 
 <style>
-
-    @import url("../components/blobs/blobStyle.css");
 
     .recipe-grid {
         display: grid;
@@ -44,19 +51,8 @@ const { title, image, alt, description, ingredients, directions } = frontmatter;
             [ingredients-end directions-start]auto;
         align-items: baseline;
         max-width: 220ch;
-        padding: var(--pad-large);
+        padding: var(--pad-large) max(var(--pad-large), 5%);
         margin-inline: auto;
-    }
-
-    .summary {
-        grid-area: summary;
-        place-self: center;
-        max-width: 32em;
-    }
-
-    .ingredients {
-        grid-area: ingredients;
-        max-width: 75ch;
     }
 
     @media (min-width: 40em) {
@@ -89,38 +85,6 @@ const { title, image, alt, description, ingredients, directions } = frontmatter;
             justify-items: center;
         }
 
-        .summary {
-            place-self: revert;
-        }
-    }
-
-    .ingredients-list {
-        padding: 0;
-    }
-
-    .ingredients-item {
-        --_gap-size: calc(var(--pad-large) * 1.5);
-        position: relative;
-        padding-inline-start: var(--_gap-size);
-        line-height: 2;
-    }
-
-    .ingredients-item::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: calc(1em - 0.25em);
-        width: 1ch;
-        height: 0.25em;
-        border-radius: 0.25em;
-        background-color: hsl(var(--contrast-low));
-    }
-
-    .directions-list {
-        --_circle-size: calc(var(--pad-large) * 2);
-        --_gap-size: calc(var(--_circle-size) / 2);
-        counter-reset: directions;
-        padding: 0;
     }
 
 </style>

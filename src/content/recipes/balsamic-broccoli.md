@@ -1,10 +1,9 @@
 ---
-layout: ../layouts/Recipe1.astro
-title: hi
-image: test
-alt: testing
+title: Balsamic Broccoli
+image: /balsamic-broccoli.jpg
+alt: A plate filled with roasted bright green broccoli.
 
-description: plub
+description: Broccoli roasted until tender, then tossed in balsamic vinegar and brown sugar
 
 ingredients:
     -
@@ -49,7 +48,7 @@ directions:
     -
         - "Rinse off the "
         - [0, 1]
-        - " and chop it into approximately one-inch pieces. Place the chopped"
+        - " and chop it into approximately one-inch pieces. Place the chopped "
         - [0, 0]
         - " into a large mixing bowl."
     -
@@ -67,11 +66,11 @@ directions:
         - [0, 0]
         - " is coated evely."
     -
-        - "Transfer the prepared"
+        - "Transfer the prepared "
         - [0, 0]
         - " onto a baking sheet lined with parchment paper. Bake in the oven for 30 to 40 minutes until the "
         - [0, 0]
-        - "has darkened to your liking."
+        - " has darkened to your liking."
     -
         - "Take the pan out of the oven, and set it on a heat-resistant surface. Sprinkle the "
         - [5, 1]

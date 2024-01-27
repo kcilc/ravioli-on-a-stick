@@ -1,7 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import LinkCard from "../components/LinkCard.astro";
 import Hero from "../components/Hero.astro";
+
+const recipes = await getCollection("recipes");
 
 ---
 
@@ -13,30 +16,16 @@ import Hero from "../components/Hero.astro";
             </Hero>
         </header>
         <section class="the-grid-pad links-grid">
-            <LinkCard
-                href="/queso-v7"
-                label="Queso v7"
-                src="/queso-v7-1024.jpg"
-                alt="A jar containing a firm cheddar-colored sauce"
-                desc="A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!" />
-            <LinkCard
-                href="/fennel-pecan-lentils"
-                label="Fennel-Pecan Lentils v3"
-                src="/sausage.jpg"
-                alt="Three vegan sausages arranged in a line on a pretty plate"
-                desc="A sausage-like mince that can be wrapped in a rice paper casing and fried." />
-            <LinkCard
-                href="/hot-chocolate"
-                label="Hot Chocolate"
-                src="/hot_chocolate.jpg"
-                alt="A mug that reads 'hubby', filled with hot chocolate and vegan whipped cream"
-                desc="A hot, chocolate-flavored, milk beverage. Even non-vegans seem to like it!" />
-            <LinkCard
-                href="/mustard-creme"
-                label="Mustard Creme"
-                src="/mustard_creme.jpg"
-                alt="A jar containing a firm cheddar-colored sauce"
-                desc="A creamy, tangy, mustardy sauce that goes great on vegan sausages" />
+        {
+            recipes.map((recipe) =>
+                <LinkCard
+                    href={`/recipes/${recipe.slug}/`}
+                    label={recipe.data.title}
+                    src={recipe.data.image}
+                    alt={recipe.data.alt}
+                    desc={recipe.data.description} />
+            )
+        }
         </section>
     </main>
 </Layout>
