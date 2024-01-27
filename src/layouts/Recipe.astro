@@ -75,7 +75,7 @@ const { pathname } = Astro.url;
         .recipe-grid {
             display: grid;
             grid-template-columns:
-                [bread-start summary-start] auto
+                [bread-start summary-start] 1.5fr
                 [summary-end ingredients-start] 1fr
                 [ingredients-end directions-start] 1.5fr
                 [directions-end bread-end];
@@ -83,7 +83,6 @@ const { pathname } = Astro.url;
                 [bread-start] auto
                 [bread-end summary-start ingredients-start directions-start] auto
                 [summary-end ingredients-end directions-end];
-            justify-items: center;
         }
 
     }

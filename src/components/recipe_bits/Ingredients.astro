@@ -12,9 +12,9 @@ const {ingredients, servings} = Astro.props;
     
     {ingredients.map(({name, amount, note}) =>
         <li class="ingredients-item">
-        <em>{amount.map((part) => typeof part === "number" ? <span data-scalable> {part}</span> : " " + part)}</em>
 
-        {name}
+        <span class="ingredient-name">{name}</span>
+        <em class="ingredient-amount">{amount.map((part) => typeof part === "number" ? <span data-scalable> {part}</span> : " " + part)}</em>
 
         {note && <small>{note}</small>}
 
@@ -33,16 +33,23 @@ const {ingredients, servings} = Astro.props;
 
     .ingredients-list {
         padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 18ch), 1fr));
+        gap: var(--pad-large);
     }
 
     .ingredients-item {
         --_gap-size: calc(var(--pad-large) * 1.5);
         position: relative;
-        padding-inline-start: var(--_gap-size);
-        line-height: 2;
+        line-height: 1.3;
+        color: hsl(var(--contrast-low));
     }
 
-    .ingredients-item::before {
+    .ingredient-name {
+        color: hsl(var(--contrast-high));
+    }
+
+    /*.ingredients-item::before {
         content: "";
         position: absolute;
         left: 0;
@@ -51,7 +58,7 @@ const {ingredients, servings} = Astro.props;
         height: 0.25em;
         border-radius: 0.25em;
         background-color: hsl(var(--contrast-low));
-    }
+    }*/
 
 </style>
 
