@@ -2,9 +2,8 @@
 title: Balsamic Broccoli
 image: /balsamic-broccoli.jpg
 alt: A plate filled with roasted bright green broccoli.
-
 description: Broccoli roasted until tender, then tossed in balsamic vinegar and brown sugar
-
+servings: 6
 ingredients:
     -
         name: broccoli

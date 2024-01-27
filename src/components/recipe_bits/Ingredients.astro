@@ -1,14 +1,18 @@
 ---
-const {ingredients} = Astro.props;
+import Scaler from "./Scaler.astro";
+const {ingredients, servings} = Astro.props;
 ---
 
 <section class="ingredients">
     <h3 class="heading-3">Ingredients</h3>
+    
+    <Scaler servings={servings} />
+    
     <ul role="list" class="ingredients-list">
     
     {ingredients.map(({name, amount, note}) =>
         <li class="ingredients-item">
-        <em>{amount.join(" ")}</em>
+        <em>{amount.map((part) => typeof part === "number" ? <span data-scalable> {part}</span> : " " + part)}</em>
 
         {name}
 
@@ -17,6 +21,7 @@ const {ingredients} = Astro.props;
         </li>)}
     
     </ul>
+
 
 </section>
 

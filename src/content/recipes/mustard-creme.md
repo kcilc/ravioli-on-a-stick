@@ -1,9 +1,9 @@
 ---
-
 title: Mustard Creme
 image: /mustard_creme.jpg
 alt: A glass jar filled half-way with a cashew-mustad creme sauce. There are flecks of mustard seed throughout.
 description: A creamy, tangy, mustardy cashew sauce that is just lovely on a vegan sausage
+servings: 3
 ingredients: 
     -
         name: "cashews"

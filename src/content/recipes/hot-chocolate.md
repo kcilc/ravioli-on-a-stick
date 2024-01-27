@@ -1,8 +1,9 @@
 ---
 title: "Hot Chocolate"
-description: "A hot, chocolate-flavored, milk beverage. Even non-vegans seem to like it!"
 image: "/hot_chocolate.jpg"
 alt: "A mug with the word 'hubby' written on the side filled with hot chocolate and whipped cream."
+description: "A hot, chocolate-flavored, milk beverage. Even non-vegans seem to like it!"
+servings: 2
 ingredients:
     -
         name: "chocolate chips"
@@ -20,7 +21,7 @@ ingredients:
 
 directions:
     -
-        - Fill a sauce pan with the
+        - "Fill a sauce pan with the "
         - [0, 1]
         - " and "
         - [1, 1]

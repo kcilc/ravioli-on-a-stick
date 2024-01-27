@@ -3,6 +3,7 @@ title: Fennel Pecan Lentils
 image: /sausage.jpg
 alt: Three fried vegan sausages sitting in a line on a fancy plate
 description: "A sausage-like mince that can be wrapped in a rice paper casing."
+servings: 8
 ingredients: 
     -
         name: "onion"
@@ -66,6 +67,8 @@ directions:
         - "After the "
         - [0, 0]
         - " is mostly transucent (about 5 minutes), add to the stock pot the "
+        - [2, 1]
+        - ", "
         - [3, 1]
         - ", "
         - [4, 1]
@@ -73,23 +76,25 @@ directions:
         - [5, 1]
         - ", "
         - [6, 1]
-        - ", "
+        - ", and "
         - [7, 1]
-        - ", "
-        - [8, 1]
         - ". Continue cooking for another 5 minutes to let the flavors mix together. While the aromatics are cooking, use a food processor to chop the "
-        - [9, 1]
+        - [8, 1]
         - " into very fine pieces. Finally, add the "
-        - [10, 1]
+        - [8, 0]
         - " and "
-        - [11, 1]
+        - [9, 1]
         - " to the stock pot. Stir occasionally for another 5 minutes."
     -
         - "Pour the "
-        - [12, 1]
+        - [10, 1]
         - " into the stock pot. Bring the mixture to a boil and reduce the heat to a simmer."
         - "Let the mixture reduce stirring occasionally until all of the water has evaporated. This typically takes 15-20 minutes."
         - " While you're waiting for the mixture to reduce add to a medium mixing bowl the "
+        - [11, 1]
+        - ", "
+        - [12, 1]
+        - ", and "
         - [13, 1]
         - "."
     -

@@ -8,6 +8,7 @@ const recipesCollection = defineCollection({
       image: z.string(),
       alt: z.string(),
       description: z.string(),
+      servings: z.number(),
       ingredients: z.array(z.object({
         name: z.string(),
         amount: z.array(z.string().or(z.number())),

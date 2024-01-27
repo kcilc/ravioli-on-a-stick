@@ -6,7 +6,7 @@ import Ingredients from "../components/recipe_bits/Ingredients.astro"
 import Directions from "../components/recipe_bits/Directions.astro"
 
 const { frontmatter } = Astro.props;
-const { title, image, alt, description, ingredients, directions } = frontmatter;
+const { title, image, alt, description, servings, ingredients, directions } = frontmatter;
 const { pathname } = Astro.url;
 ---
 
@@ -24,7 +24,8 @@ const { pathname } = Astro.url;
             description={description} />
 
         <Ingredients
-            ingredients={ingredients} />
+            ingredients={ingredients}
+            servings={servings} />
 
         <Directions
             directions={directions}
@@ -88,4 +89,3 @@ const { pathname } = Astro.url;
     }
 
 </style>
-

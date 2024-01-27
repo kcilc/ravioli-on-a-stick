@@ -3,6 +3,7 @@ title: "Queso v7"
 image: "/queso-v7-1024.jpg"
 alt: "A mason jar sitting a counter filled with a thick sauce the color of cheddar."
 description: "A creamy, queso-like vegan sauce. It goes great on pizza, noodles, and inside quesadillas!"
+servings: 4
 ingredients:  
     - 
         name: "carrots"
