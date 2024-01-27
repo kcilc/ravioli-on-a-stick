@@ -25,7 +25,7 @@ const {title, image, alt, description} = Astro.props;
             [title-end image-start] auto
             [image-end subtite-start] auto
             [subitle-end];
-        max-width: 32em;
+        gap: var(--pad-large);
     }
     
     @media (min-width: 36em) and (max-width: 89.99em) {
@@ -37,18 +37,20 @@ const {title, image, alt, description} = Astro.props;
             grid-template-rows:
                 [title-start image-start] auto
                 [title-end subtitle-start] auto
-                    [subtitle-end image-end];
-            max-width: 64em;
+                [subtitle-end image-end];
+            gap: calc(var(--pad-large) * 2);
         }
     }
     
     @media (min-width: 90em) {
         .summary {
             place-self: revert;
+            max-width: 32em;
         }
     }
     .grid-image {
         grid-area: image;
+        max-width: min(100%, 32em);
     }
 
     .grid-title {
