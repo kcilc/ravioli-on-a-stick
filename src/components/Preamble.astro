@@ -1,9 +1,9 @@
 ---
 ---
 
-<p class="preamble">
+<section class="preamble">
     <slot />
-</p>
+</section>
 
 <style>
 
@@ -11,7 +11,11 @@
         padding: var(--pad-mid) var(--pad-large);
         background-color: hsl(var(--plane-low) / 50%);
         border-radius: var(--pad-mid);
-        margin-block-end: var(--pad-large);
+        margin-block: var(--pad-large);
+    }
+
+    :global(.preamble > *) {
+        margin: 0;
     }
 
 </style>

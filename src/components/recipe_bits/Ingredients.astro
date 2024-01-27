@@ -1,0 +1,52 @@
+---
+const {ingredients} = Astro.props;
+---
+
+<section class="ingredients">
+    <h3 class="heading-3">Ingredients</h3>
+    <ul role="list" class="ingredients-list">
+    
+    {ingredients.map(({name, amount, note}) =>
+        <li class="ingredients-item">
+        <em>{amount.join(" ")}</em>
+
+        {name}
+
+        {note && <small>{note}</small>}
+
+        </li>)}
+    
+    </ul>
+
+</section>
+
+<style>
+    .ingredients {
+        grid-area: ingredients;
+        max-width: 75ch;
+    }
+
+    .ingredients-list {
+        padding: 0;
+    }
+
+    .ingredients-item {
+        --_gap-size: calc(var(--pad-large) * 1.5);
+        position: relative;
+        padding-inline-start: var(--_gap-size);
+        line-height: 2;
+    }
+
+    .ingredients-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(1em - 0.25em);
+        width: 1ch;
+        height: 0.25em;
+        border-radius: 0.25em;
+        background-color: hsl(var(--contrast-low));
+    }
+
+</style>
+

@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^2.0.3",
-    "astro": "^4.1.1"
+    "astro": "^4.1.1",
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0"
   }
 }

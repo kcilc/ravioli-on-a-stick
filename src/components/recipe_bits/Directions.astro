@@ -1,0 +1,110 @@
+---
+import Preamble from "../Preamble.astro";
+const {directions, ingredients} = Astro.props;
+
+function nameOf(index) {
+    return ingredients[index[0]].name;
+}
+
+function amountOf(index) {
+    if (index[1] > 0) {
+        return ` (${ingredients[index[0]].amount.join(" ")})`;
+    } else {
+        return null;
+    }
+}
+---
+
+<section class="directions">
+    <h2 class="heading-3">Directions</h2>
+
+    <Preamble>
+        <slot />
+    </Preamble>
+
+    <ol role="list" class="directions-list">
+        { directions.map((step) => 
+
+            <li class="directions-item">
+                { step.map((content, i, self) => <>
+                        
+                    { typeof content === "string" && content }
+                        
+                    { Array.isArray(content) &&
+                        <strong>{nameOf(content)}{amountOf(content)}</strong>
+                    }
+
+                </>)}
+            </li>)}
+    </ol>
+</section>
+
+<style>
+
+    @import url("../blobs/blobStyle.css");
+
+    .directions {
+        grid-area: directions;
+        max-width: 75ch;
+    }
+
+    .directions-list {
+        --_circle-size: calc(var(--pad-large) * 2);
+        --_gap-size: calc(var(--_circle-size) / 2);
+        counter-reset: directions;
+        padding: 0;
+    }
+
+    .directions-item {
+        position: relative;
+    }
+
+    .directions-item::before {
+        content: counter(directions);
+        counter-increment: directions;
+        display: grid;
+        place-items: center;
+        width: var(--_circle-size);
+        height: var(--_circle-size);
+        margin-inline: auto;
+        background-color: hsl(var(--contrast-high));
+        color: hsl(var(--plane-low));
+        font-family: 'Dosis', sans-serif;
+        font-weight: 600;
+    }
+
+    @media (min-width: 18em) {
+        .directions-item {
+            padding-inline-start: calc(var(--_circle-size) + var(--_gap-size));
+        }
+
+        .directions-item::before {
+            position: absolute;
+            left: 0;
+            margin-inline: revert;
+        }
+
+    }
+
+    .directions-item:nth-child(1n)::before {
+        mask: url("../../../public/blobs/blob_1.svg");
+        mask-size: contain;
+    }
+    .directions-item:nth-child(2n)::before {
+        mask: url("../../../public/blobs/blob_2.svg");
+        mask-size: contain;
+    }
+    .directions-item:nth-child(3n)::before {
+        mask: url("../../../public/blobs/blob_3.svg");
+        mask-size: contain;
+    }
+    .directions-item:nth-child(4n)::before {
+        mask: url("../../../public/blobs/blob_4.svg");
+        mask-size: contain;
+    }
+
+    .directions-item + .directions-item {
+        margin-block-start: calc(var(--pad-large) * 3);
+    }
+
+</style>
