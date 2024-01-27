@@ -1,7 +1,7 @@
 ---
 
 import { getCollection } from "astro:content";
-import Recipe1 from "../../layouts/Recipe1.astro";
+import Recipe from "../../layouts/Recipe.astro";
 
 export async function getStaticPaths() {
   const recipeEntries = await getCollection('recipes');
@@ -15,6 +15,6 @@ const { Content } = await entry.render();
 
 ---
 
-<Recipe1 frontmatter={entry.data}>
+<Recipe frontmatter={entry.data}>
     <Content />
-</Recipe1>
+</Recipe>
