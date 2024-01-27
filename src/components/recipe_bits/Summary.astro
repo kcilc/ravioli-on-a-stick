@@ -1,0 +1,64 @@
+---
+import { randomBlob } from "../../components/blobs/blob_utils.js";
+
+const {title, image, alt, description} = Astro.props;
+---
+<hgroup class="summary">
+    <h1 class="heading-1 no-margin grid-title">{title}</h1>
+    <img class:list={["grid-image", randomBlob()]} src={image} alt={alt} />
+    <p class="heading-4 grid-subtitle">{description}</p>
+</hgroup>
+
+<style>
+
+    @import url("../../components/blobs/blobStyle.css");
+
+    .summary {
+        grid-area: summary;
+        place-self: center;
+        display: grid;
+        grid-template-columns:
+            [title-start subtitle-start image-start] auto
+            [title-end subtitle-end image-end];
+        grid-template-rows:
+            [title-start] auto
+            [title-end image-start] auto
+            [image-end subtite-start] auto
+            [subitle-end];
+        max-width: 32em;
+    }
+    
+    @media (min-width: 32em) and (max-width: 89.99em) {
+        .summary {
+            grid-template-columns:
+                [title-start subtitle-start] 1fr
+                [title-end subtitle-end image-start] 1fr
+                    [image-end];
+            grid-template-rows:
+                [title-start image-start] auto
+                [title-end subtitle-start] auto
+                    [subtitle-end image-end];
+            max-width: 64em;
+        }
+    }
+    
+    @media (min-width: 90em) {
+        .summary {
+            place-self: revert;
+        }
+    }
+    .grid-image {
+        grid-area: image;
+    }
+
+    .grid-title {
+        grid-area: title;
+        align-self: end;
+    }
+
+    .grid-subtitle {
+        grid-area: subtitle;
+        align-self: start;
+    }
+
+</style>
