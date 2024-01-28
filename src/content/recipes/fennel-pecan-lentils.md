@@ -59,9 +59,9 @@ directions:
         - " as finely as you possibly can."
     -
         - "Add the "
-        - [1, 1]
+        - [0, 1]
         - " to a large stock pot. Preheat the stock pot on low heat then add the "
-        - [2, 1]
+        - [1, 1]
         - " when it is warm. You can sprinkle some salt over them to help them sweat."
     -
         - "After the "
@@ -121,4 +121,6 @@ directions:
         - "I like to keep mine frozen so that they don't stick together."
 ---
 Adapted from <a href="https://healthiersteps.com/recipe/lentil-meatballs-vegan-gluten-free-2/"> Healthier Step's Lentil Meatball recipe</a>.
-            
+
+- I need to make it clear there should be some salt added.
+- For a tree-nut free version, replace the pecans with a block of tempeh, and add 2 tsp soy sauce, 1 tsp maple syrup, and 3 drops of liquid smoke during the "broth" phase.
