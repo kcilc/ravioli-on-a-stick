@@ -123,4 +123,4 @@ directions:
 Adapted from <a href="https://healthiersteps.com/recipe/lentil-meatballs-vegan-gluten-free-2/"> Healthier Step's Lentil Meatball recipe</a>.
 
 - I need to make it clear there should be some salt added.
-- For a tree-nut free version, replace the pecans with a block of tempeh, and add 2 tsp soy sauce, 1 tsp maple syrup, and 3 drops of liquid smoke during the "broth" phase.
+- For a tree-nut free version, replace the pecans with <span data-scalable="">1</span> block of tempeh, and add <span data-scalable="">2</span> tsp soy sauce, <span data-scalable="">1</span> tsp maple syrup, and <span data-scalable="">3</span> drops of liquid smoke during the "broth" phase.

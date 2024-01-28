@@ -5,9 +5,9 @@ const { servings } = Astro.props;
 <div id="servings" class="servings-card" data-servings={servings}> 
     <span class="description">Serves &mdash; <strong data-scalable>{servings}</strong></span>
     <div class="button-group">
-        <button data-scale-factor="0.5" class="toggle" aria-selected="false">&frac12;</button>
+        <button data-scale-factor="0.5" class="toggle" aria-pressed="false">&frac12;</button>
         <div class="button-group-divider"></div>
-        <button data-scale-factor="2" class="toggle" aria-selected="false">2x</button>
+        <button data-scale-factor="2" class="toggle" aria-pressed="false">2x</button>
     </div>
 </div>
 
@@ -50,17 +50,17 @@ const { servings } = Astro.props;
         border-radius: var(--pad-small);
     }
 
-    button:is([aria-selected]):hover {
+    button:is([aria-pressed]):hover {
         background-color: hsl(var(--contrast-low) / 12.5%);
         color: hsl(var(--contrast-high));
     }
-    button:is([aria-selected="true"]) {
+    button:is([aria-pressed="true"]) {
         background-color: hsl(var(--alt-mid));
         color: hsl(var(--plane-mid));
-        box-shadow: 0 0.25em 1em hsl(var(--plane-low));
+        box-shadow: 0 0.25em 1em hsl(var(--alt-low) / 25%);
     }
-    button:is([aria-selected="true"]):hover {
-        background-color: hsl(var(--contrast-mid));
+    button:is([aria-pressed="true"]):hover {
+        background-color: hsl(var(--alt-high));
         color: hsl(var(--plane-mid));
     }
 
@@ -85,12 +85,12 @@ const { servings } = Astro.props;
     servings.addEventListener("click", (e) => {
         const scaler = e.target.closest("[data-scale-factor]");
         if (scaler) {
-            const alreadySelected = scaler.ariaSelected === "true";
+            const alreadyPressed = scaler.ariaPressed === "true";
             
-            scaleControllers.forEach(scaleController => scaleController.ariaSelected = "false");
-            scaler.ariaSelected = alreadySelected ? "false" : "true";
+            scaleControllers.forEach(scaleController => scaleController.setAttribute("aria-pressed", "false"));
+            scaler.setAttribute("aria-pressed", alreadyPressed ? "false" : "true");
             
-            scaleBy(parseFloat(alreadySelected ? 1 : scaler.dataset.scaleFactor));
+            scaleBy(parseFloat(alreadyPressed ? 1 : scaler.dataset.scaleFactor));
         }
     });
     scalableNodes.forEach(node => node.textContent = replaceFraction(node.textContent.trim()));

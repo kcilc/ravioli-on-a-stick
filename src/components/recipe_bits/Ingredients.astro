@@ -14,7 +14,7 @@ const {ingredients, servings} = Astro.props;
         <li class="ingredients-item">
 
         <span class="ingredient-name">{name}</span>
-        <em class="ingredient-amount">{amount.map((part) => typeof part === "number" ? <span data-scalable> {part}</span> : " " + part)}</em>
+        <em class="ingredient-amount">{amount.map((part) => typeof part === "number" ? <>&nbsp;<span data-scalable>{part}</span></> : " " + part)}</em>
 
         {note && <small>{note}</small>}
 
