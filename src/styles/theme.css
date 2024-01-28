@@ -27,7 +27,9 @@
     --plane-high: var(--clr-main-50);
     --plane-mid: var(--clr-main-100);
     --plane-low: var(--clr-main-200);
-
+    --alt-high: var(--clr-alt-400);
+    --alt-mid: var(--clr-alt-500);
+    --alt-low: var(--clr-alt-600);
     --contrast-high: var(--clr-main-800);
     --contrast-mid: var(--clr-main-700);
     --contrast-low: var(--clr-main-500);
@@ -54,6 +56,9 @@
         --plane-high: var(--clr-main-800);
         --plane-mid: var(--clr-main-900);
         --plane-low: var(--clr-main-950);
+        --alt-high: var(--clr-alt-200);
+        --alt-mid: var(--clr-alt-300);
+        --alt-low: var(--clr-alt-400);
         --contrast-high: var(--clr-main-100);
         --contrast-mid: var(--clr-main-300);
         --contrast-low: var(--clr-main-400);
@@ -66,6 +71,9 @@
     --plane-high: var(--clr-main-50);
     --plane-mid: var(--clr-main-100);
     --plane-low: var(--clr-main-200);
+    --alt-high: var(--clr-alt-400);
+    --alt-mid: var(--clr-alt-500);
+    --alt-low: var(--clr-alt-600);
     --contrast-high: var(--clr-main-800);
     --contrast-mid: var(--clr-main-700);
     --contrast-low: var(--clr-main-500);
@@ -77,6 +85,9 @@
     --plane-high: var(--clr-main-800);
     --plane-mid: var(--clr-main-900);
     --plane-low: var(--clr-main-950);
+    --alt-high: var(--clr-alt-200);
+    --alt-mid: var(--clr-alt-300);
+    --alt-low: var(--clr-alt-400);
     --contrast-high: var(--clr-main-100);
     --contrast-mid: var(--clr-main-300);
     --contrast-low: var(--clr-main-400);
