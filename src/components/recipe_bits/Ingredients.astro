@@ -33,9 +33,7 @@ const {ingredients, servings} = Astro.props;
 
     .ingredients-list {
         padding: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 18ch), 1fr));
-        gap: var(--pad-large);
+        columns: 18ch auto;
     }
 
     .ingredients-item {
@@ -43,6 +41,10 @@ const {ingredients, servings} = Astro.props;
         position: relative;
         line-height: 1.3;
         color: hsl(var(--contrast-low));
+        padding-block: var(--pad-mid);
+        -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+        page-break-inside: avoid; /* Firefox */
+        break-inside: avoid; /* IE 10+ */
     }
 
     .ingredient-name {
