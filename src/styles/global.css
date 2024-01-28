@@ -14,7 +14,7 @@
 @font-face {
   font-family: "Noto_Sans";
   src: local("Noto_Sans"), local("NotoSans"), url('/fonts/NotoSans-VariableFont_wdth,wght.ttf');
-  font-weight: 400 600;
+  font-weight: 400 700;
   font-style: normal;
   font-display: auto;
 }
