@@ -14,7 +14,15 @@
     --clr-main-900: 225deg 15% 10%;
     --clr-main-950: 225deg 15% 2%;
 
-    --clr-alt-400: 350deg 50% 50%;
+    --clr-alt-100: 240deg 100% 90%;
+    --clr-alt-200: 240deg 90% 80%;
+    --clr-alt-300: 240deg 80% 70%;
+    --clr-alt-400: 240deg 70% 60%;
+    --clr-alt-500: 240deg 55% 50%;
+    --clr-alt-600: 240deg 60% 40%;
+    --clr-alt-700: 240deg 65% 30%;
+    --clr-alt-800: 240deg 70% 20%;
+    --clr-alt-900: 240deg 75% 10%;
 
     --plane-high: var(--clr-main-50);
     --plane-mid: var(--clr-main-100);
