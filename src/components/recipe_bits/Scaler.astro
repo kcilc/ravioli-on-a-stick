@@ -55,7 +55,7 @@ const { servings } = Astro.props;
         color: hsl(var(--contrast-high));
     }
     button:is([aria-selected="true"]) {
-        background-color: hsl(var(--contrast-high));
+        background-color: hsl(var(--clr-alt-400));
         color: hsl(var(--plane-mid));
         box-shadow: 0 0.25em 1em hsl(var(--plane-low));
     }
@@ -67,6 +67,8 @@ const { servings } = Astro.props;
 </style>
 
 <script>
+    import { replaceFraction } from "../../scripts/fraction-convert";
+    
     const servings = document.getElementById("servings");
     const scalableNodes = document.querySelectorAll("[data-scalable]");
     const scaleControllers = document.querySelectorAll("[data-scale-factor]");
@@ -76,7 +78,7 @@ const { servings } = Astro.props;
 
     function scaleBy(multiplier) {
         scalableNodes.forEach((scalableNode, i) => {
-            scalableNode.textContent = (baseScale[i] * multiplier).toString();
+            scalableNode.textContent = replaceFraction((baseScale[i] * multiplier).toString());
         });
     }
     
@@ -91,4 +93,5 @@ const { servings } = Astro.props;
             scaleBy(parseFloat(alreadySelected ? 1 : scaler.dataset.scaleFactor));
         }
     });
+    scalableNodes.forEach(node => node.textContent = replaceFraction(node.textContent.trim()));
 </script>
