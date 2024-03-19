@@ -28,6 +28,10 @@ ingredients:
         name: "white vinegar"
         amount: [ 1, "tbsp" ]
     -
+        name: "garlic"
+        amount: [ 1, "clove" ]
+        note: "grated"
+    -
         name: "jasmine rice"
         amount: [ 1, "cup" ]
         note: "cooked, leftover"
@@ -67,28 +71,30 @@ directions:
         - [4, 1]
         - ", "
         - [5, 1]
-        - ", and "
-        - [6, 1]
-        - " to the pan. Stir to incorporate everything evenly. Give it a second, then push everything off to the side and add the "
-        - [7, 1]
         - ", "
+        - [6, 1]
+        - ", and "
+        - [7, 1]
+        - " to the pan. Stir to incorporate everything evenly. Give it a second, then push everything off to the side and add the "
         - [8, 1]
         - ", "
         - [9, 1]
-        - ", and "
+        - ", "
         - [10, 1]
+        - ", and "
+        - [11, 1]
         - ". Break up the rice and let it brown for a little bit, then toss it all together."
     -
         - "If you haven't already, chop up the "
-        - [11, 1]
+        - [12, 1]
         - " into tiny little pieces, then stir them all into the fried rice."
     -
         - "Once the "
-        - [11, 0]
+        - [12, 0]
         - " has gotten bright green, make a hole in the middle of the pan and turn off the heat. Pour the "
-        - [12, 1]
-        - " onto the bare spot on the pan, and then stir it together. Finish by dusting the top with the "
         - [13, 1]
+        - " onto the bare spot on the pan, and then stir it together. Finish by dusting the top with the "
+        - [14, 1]
         - ", and serve."
 
 ---
