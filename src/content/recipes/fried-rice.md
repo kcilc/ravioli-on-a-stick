@@ -1,6 +1,6 @@
 ---
 title: "Tofu Fried Rice"
-image: "/I_dont_have_a_picture_yet.jpg"
+image: "/fried-rice.jpg"
 alt: "Plate filled with fried rice, small broccoli pieces, and bright yellow tofu."
 description: "Vegan tofu fried rice with broccoli. Starring the special guest: kala namak."
 servings: 4
@@ -32,9 +32,8 @@ ingredients:
         amount: [ 1, "clove" ]
         note: "grated"
     -
-        name: "jasmine rice"
+        name: "leftover jasmine rice"
         amount: [ 1, "cup" ]
-        note: "cooked, leftover"
     -
         name: "neutral oil"
         amount: [ 2, "tbsp" ]
@@ -59,14 +58,16 @@ directions:
     -
         - "Heat a large skillet on medium and add the "
         - [0, 1]
-        - ". Rip the tofu into bite-size chunks directly into the pan and sprinkle the "
+        - ". Rip the "
         - [1, 1]
-        - " and "
+        - " into bite-size chunks directly into the pan and sprinkle the "
         - [2, 1]
+        - " and "
+        - [3, 1]
         - " on top. Cook for about ten minutes, tossing occasionally."
     -
         - "Once the "
-        - [2, 0]
+        - [1, 0]
         - " is nicely golden brown and mostly dry, gather it into the center of the pan. Add the "
         - [4, 1]
         - ", "

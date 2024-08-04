@@ -59,9 +59,9 @@ directions:
         - " as finely as you possibly can."
     -
         - "Add the "
-        - [0, 1]
-        - " to a large stock pot. Preheat the stock pot on low heat then add the "
         - [1, 1]
+        - " to a large stock pot. Preheat the stock pot on low heat then add the "
+        - [0, 1]
         - " when it is warm. You can sprinkle some salt over them to help them sweat."
     -
         - "After the "

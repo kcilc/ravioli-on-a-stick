@@ -1,11 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import { randomBlob } from "../../components/blobs/blob_utils.js";
 
 const {title, image, alt, description} = Astro.props;
 ---
 <hgroup class="summary">
     <h1 class="heading-1 no-margin grid-title">{title}</h1>
-    <img class:list={["grid-image", randomBlob()]} src={image} alt={alt} />
+    <Image class:list={["grid-image", randomBlob()]} width="1024" height="1024" src={image} alt={alt} />
     <p class="heading-4 grid-subtitle">{description}</p>
 </hgroup>
 
